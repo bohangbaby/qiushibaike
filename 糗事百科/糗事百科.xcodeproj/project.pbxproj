@@ -9,10 +9,15 @@
 /* Begin PBXBuildFile section */
 		226CEC481BECD0030061A5D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CEC471BECD0030061A5D8 /* main.m */; };
 		226CEC4B1BECD0030061A5D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CEC4A1BECD0030061A5D8 /* AppDelegate.m */; };
-		226CEC4E1BECD0030061A5D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CEC4D1BECD0030061A5D8 /* ViewController.m */; };
 		226CEC511BECD0030061A5D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226CEC4F1BECD0030061A5D8 /* Main.storyboard */; };
 		226CEC531BECD0030061A5D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 226CEC521BECD0030061A5D8 /* Assets.xcassets */; };
 		226CEC561BECD0030061A5D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226CEC541BECD0030061A5D8 /* LaunchScreen.storyboard */; };
+		226CEC721BECD3620061A5D8 /* WMFooldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CEC681BECD3620061A5D8 /* WMFooldView.m */; };
+		226CEC731BECD3620061A5D8 /* WMMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CEC6A1BECD3620061A5D8 /* WMMenuItem.m */; };
+		226CEC741BECD3620061A5D8 /* WMMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CEC6C1BECD3620061A5D8 /* WMMenuView.m */; };
+		226CEC751BECD3620061A5D8 /* WMProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CEC6E1BECD3620061A5D8 /* WMProgressView.m */; };
+		226CEC761BECD3620061A5D8 /* WMPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CEC711BECD3620061A5D8 /* WMPageController.m */; };
+		226CEC7A1BECD40D0061A5D8 /* AppDelegate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CEC791BECD40D0061A5D8 /* AppDelegate+Category.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +25,23 @@
 		226CEC471BECD0030061A5D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		226CEC491BECD0030061A5D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		226CEC4A1BECD0030061A5D8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		226CEC4C1BECD0030061A5D8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		226CEC4D1BECD0030061A5D8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		226CEC501BECD0030061A5D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		226CEC521BECD0030061A5D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		226CEC521BECD0030061A5D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		226CEC551BECD0030061A5D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		226CEC571BECD0030061A5D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		226CEC671BECD3620061A5D8 /* WMFooldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMFooldView.h; sourceTree = "<group>"; };
+		226CEC681BECD3620061A5D8 /* WMFooldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMFooldView.m; sourceTree = "<group>"; };
+		226CEC691BECD3620061A5D8 /* WMMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMMenuItem.h; sourceTree = "<group>"; };
+		226CEC6A1BECD3620061A5D8 /* WMMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMMenuItem.m; sourceTree = "<group>"; };
+		226CEC6B1BECD3620061A5D8 /* WMMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMMenuView.h; sourceTree = "<group>"; };
+		226CEC6C1BECD3620061A5D8 /* WMMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMMenuView.m; sourceTree = "<group>"; };
+		226CEC6D1BECD3620061A5D8 /* WMProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMProgressView.h; sourceTree = "<group>"; };
+		226CEC6E1BECD3620061A5D8 /* WMProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMProgressView.m; sourceTree = "<group>"; };
+		226CEC6F1BECD3620061A5D8 /* WMPageConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPageConst.h; sourceTree = "<group>"; };
+		226CEC701BECD3620061A5D8 /* WMPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPageController.h; sourceTree = "<group>"; };
+		226CEC711BECD3620061A5D8 /* WMPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPageController.m; sourceTree = "<group>"; };
+		226CEC781BECD40D0061A5D8 /* AppDelegate+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Category.h"; sourceTree = "<group>"; };
+		226CEC791BECD40D0061A5D8 /* AppDelegate+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Category.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +74,8 @@
 		226CEC451BECD0030061A5D8 /* 糗事百科 */ = {
 			isa = PBXGroup;
 			children = (
+				226CEC771BECD3DD0061A5D8 /* Util */,
+				226CEC641BECD30F0061A5D8 /* Resoure */,
 				226CEC5D1BECD1C80061A5D8 /* Define */,
 				226CEC5E1BECD1C80061A5D8 /* Model */,
 				226CEC5F1BECD1C80061A5D8 /* NetworkManager */,
@@ -67,12 +85,6 @@
 				226CEC631BECD1C80061A5D8 /* ViewModel */,
 				226CEC491BECD0030061A5D8 /* AppDelegate.h */,
 				226CEC4A1BECD0030061A5D8 /* AppDelegate.m */,
-				226CEC4C1BECD0030061A5D8 /* ViewController.h */,
-				226CEC4D1BECD0030061A5D8 /* ViewController.m */,
-				226CEC4F1BECD0030061A5D8 /* Main.storyboard */,
-				226CEC521BECD0030061A5D8 /* Assets.xcassets */,
-				226CEC541BECD0030061A5D8 /* LaunchScreen.storyboard */,
-				226CEC571BECD0030061A5D8 /* Info.plist */,
 				226CEC461BECD0030061A5D8 /* Supporting Files */,
 			);
 			path = "糗事百科";
@@ -81,6 +93,7 @@
 		226CEC461BECD0030061A5D8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				226CEC571BECD0030061A5D8 /* Info.plist */,
 				226CEC471BECD0030061A5D8 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -110,6 +123,7 @@
 		226CEC601BECD1C80061A5D8 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				226CEC651BECD3620061A5D8 /* WMPageController */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -133,6 +147,51 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		226CEC641BECD30F0061A5D8 /* Resoure */ = {
+			isa = PBXGroup;
+			children = (
+				226CEC4F1BECD0030061A5D8 /* Main.storyboard */,
+				226CEC521BECD0030061A5D8 /* Assets.xcassets */,
+				226CEC541BECD0030061A5D8 /* LaunchScreen.storyboard */,
+			);
+			path = Resoure;
+			sourceTree = "<group>";
+		};
+		226CEC651BECD3620061A5D8 /* WMPageController */ = {
+			isa = PBXGroup;
+			children = (
+				226CEC661BECD3620061A5D8 /* WMMenuView */,
+				226CEC6F1BECD3620061A5D8 /* WMPageConst.h */,
+				226CEC701BECD3620061A5D8 /* WMPageController.h */,
+				226CEC711BECD3620061A5D8 /* WMPageController.m */,
+			);
+			path = WMPageController;
+			sourceTree = "<group>";
+		};
+		226CEC661BECD3620061A5D8 /* WMMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				226CEC671BECD3620061A5D8 /* WMFooldView.h */,
+				226CEC681BECD3620061A5D8 /* WMFooldView.m */,
+				226CEC691BECD3620061A5D8 /* WMMenuItem.h */,
+				226CEC6A1BECD3620061A5D8 /* WMMenuItem.m */,
+				226CEC6B1BECD3620061A5D8 /* WMMenuView.h */,
+				226CEC6C1BECD3620061A5D8 /* WMMenuView.m */,
+				226CEC6D1BECD3620061A5D8 /* WMProgressView.h */,
+				226CEC6E1BECD3620061A5D8 /* WMProgressView.m */,
+			);
+			path = WMMenuView;
+			sourceTree = "<group>";
+		};
+		226CEC771BECD3DD0061A5D8 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				226CEC781BECD40D0061A5D8 /* AppDelegate+Category.h */,
+				226CEC791BECD40D0061A5D8 /* AppDelegate+Category.m */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,9 +265,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				226CEC4E1BECD0030061A5D8 /* ViewController.m in Sources */,
+				226CEC721BECD3620061A5D8 /* WMFooldView.m in Sources */,
+				226CEC741BECD3620061A5D8 /* WMMenuView.m in Sources */,
+				226CEC761BECD3620061A5D8 /* WMPageController.m in Sources */,
 				226CEC4B1BECD0030061A5D8 /* AppDelegate.m in Sources */,
+				226CEC751BECD3620061A5D8 /* WMProgressView.m in Sources */,
 				226CEC481BECD0030061A5D8 /* main.m in Sources */,
+				226CEC7A1BECD40D0061A5D8 /* AppDelegate+Category.m in Sources */,
+				226CEC731BECD3620061A5D8 /* WMMenuItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +285,7 @@
 				226CEC501BECD0030061A5D8 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		226CEC541BECD0030061A5D8 /* LaunchScreen.storyboard */ = {
@@ -229,6 +294,7 @@
 				226CEC551BECD0030061A5D8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -355,6 +421,7 @@
 				226CEC5C1BECD0030061A5D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
