@@ -15,6 +15,7 @@
 		220B90941BEDA0590028E2D4 /* QiuBaiListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B90931BEDA0590028E2D4 /* QiuBaiListViewController.m */; };
 		220B90971BEDA0C70028E2D4 /* ListTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B90961BEDA0C70028E2D4 /* ListTextCell.m */; };
 		220B909A1BEDA45C0028E2D4 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B90991BEDA45C0028E2D4 /* UIView+Extension.m */; };
+		226C64A11BEDDF44006C6062 /* discover_ftue.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 226C64A01BEDDF44006C6062 /* discover_ftue.jpg */; };
 		226CEC481BECD0030061A5D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CEC471BECD0030061A5D8 /* main.m */; };
 		226CEC4B1BECD0030061A5D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CEC4A1BECD0030061A5D8 /* AppDelegate.m */; };
 		226CEC721BECD3620061A5D8 /* WMFooldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CEC681BECD3620061A5D8 /* WMFooldView.m */; };
@@ -56,6 +57,7 @@
 		220B90961BEDA0C70028E2D4 /* ListTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTextCell.m; sourceTree = "<group>"; };
 		220B90981BEDA45C0028E2D4 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		220B90991BEDA45C0028E2D4 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		226C64A01BEDDF44006C6062 /* discover_ftue.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = discover_ftue.jpg; sourceTree = "<group>"; };
 		226CEC431BECD0030061A5D8 /* 糗事百科.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "糗事百科.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		226CEC471BECD0030061A5D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		226CEC491BECD0030061A5D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 		E067542D1BECEFBA0021F3B1 /* Resoure */ = {
 			isa = PBXGroup;
 			children = (
+				226C64A01BEDDF44006C6062 /* discover_ftue.jpg */,
 				E06754501BECF3C70021F3B1 /* PrefixHeader.pch */,
 				E06754181BECE3A20021F3B1 /* Assets.xcassets */,
 				E06754211BECE3C40021F3B1 /* LaunchScreen.storyboard */,
@@ -362,6 +365,7 @@
 			files = (
 				E06754261BECE3C40021F3B1 /* Main.storyboard in Resources */,
 				E067541E1BECE3A20021F3B1 /* Assets.xcassets in Resources */,
+				226C64A11BEDDF44006C6062 /* discover_ftue.jpg in Resources */,
 				E06754251BECE3C40021F3B1 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

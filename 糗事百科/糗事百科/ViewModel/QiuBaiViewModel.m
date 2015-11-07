@@ -14,6 +14,13 @@
     return self.dataArr.count;
 }
 
+- (NSMutableArray *)dataArr {
+    if (_dataArr == nil) {
+        _dataArr = [NSMutableArray array];
+    }
+    return _dataArr;
+}
+
 /**
  *  获取糗事模型
  */
@@ -37,7 +44,8 @@
  *  用户头像
  */
 - (NSURL *)iconForRow:(NSInteger)row {
-    return [NSURL URLWithString:[self userModelForRow:row].icon];
+    NSURL *url = [NSURL URLWithString:[self userModelForRow:row].icon];
+    return url;
 }
 /**
  *  用户名
@@ -90,7 +98,7 @@
         if (_page == 1) {
             [self.dataArr removeAllObjects];
         }
-        [self.dataArr addObject:model];
+        [self.dataArr addObjectsFromArray:model.items];
     }];
 }
 

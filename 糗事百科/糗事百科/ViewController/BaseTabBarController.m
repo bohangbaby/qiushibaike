@@ -13,6 +13,7 @@
 #import "ChatViewController.h"
 #import "MeViewController.h"
 #import "BaseNavigationController.h"
+#import "QiuBaiListViewController.h"
 
 @interface BaseTabBarController ()
 
@@ -23,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     /** 糗事控制器 */
-    MainViewController *mainVC = [[MainViewController alloc] init];
+    QiuBaiListViewController *mainVC = [[QiuBaiListViewController alloc] init];
     [self setChildVC:mainVC andTitle:@"糗事" andNormalImage:@"icon_main" andSelectedImage:@"icon_main_active"];
     /** 糗友圈控制器 */
     FriendViewController *friendVC = [[FriendViewController alloc] init];

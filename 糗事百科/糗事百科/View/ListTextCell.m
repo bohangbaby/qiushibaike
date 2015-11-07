@@ -12,7 +12,7 @@
 
 #pragma mark - 懒加载
 - (UIImageView *)icon {
-    if (_icon) {
+    if (_icon == nil) {
         _icon = [UIImageView new];
         _icon.layer.cornerRadius = _icon.width/2.0;
         _icon.layer.masksToBounds = YES;
@@ -32,7 +32,9 @@
 - (UILabel *)content {
     if (_content == nil) {
         _content = [UILabel new];
-        _nikeName.font = [UIFont systemFontOfSize:18];
+        _content.font = [UIFont systemFontOfSize:18];
+        _content.numberOfLines = 0;
+        _content.backgroundColor = [UIColor blueColor];
     }
     return _content;
 }
@@ -102,47 +104,48 @@
         
         [self.icon mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.top.mas_equalTo(10);
-            make.size.mas_equalTo(CGSizeMake(50, 50));
+            make.size.mas_equalTo(CGSizeMake(40, 40));
         }];
         [self.nikeName mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(_icon.mas_right).mas_equalTo(10);
-            make.topMargin.mas_equalTo(_icon.mas_topMargin).mas_equalTo(3);
-            make.right.mas_equalTo(_type.mas_left).mas_equalTo(-10);
+            make.topMargin.mas_equalTo(_icon.mas_topMargin).mas_equalTo(10);
+            make.right.mas_equalTo(self.type.mas_left).mas_equalTo(-10);
         }];
         [self.type mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.mas_equalTo(-10);
             make.size.mas_equalTo(CGSizeMake(60, 50));
-            make.topMargin.mas_equalTo(_nikeName.mas_topMargin);
+            make.top.mas_equalTo(13);
         }];
         [self.content mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(10);
-            make.top.mas_equalTo(_icon.mas_bottom).mas_equalTo(10);
+            make.top.mas_equalTo(_icon.mas_bottom).mas_equalTo(5);
             make.right.mas_equalTo(-10);
         }];
         [self.votes mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(_content.mas_bottom).mas_equalTo(10);
+            make.top.mas_equalTo(self.content.mas_bottom).mas_equalTo(10);
             make.left.mas_equalTo(10);
+            make.height.mas_equalTo(20);
             make.width.mas_equalTo(200);
         }];
         [self.up mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(10);
-            make.top.mas_equalTo(_votes.mas_bottom).mas_equalTo(10);
+            make.bottom.mas_equalTo(-10);
             make.size.mas_equalTo(CGSizeMake(60, 40));
         }];
         [self.down mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(_up.mas_right).mas_equalTo(0);
-            make.size.mas_equalTo(_up);
-            make.topMargin.mas_equalTo(_up.mas_topMargin);
+            make.left.mas_equalTo(self.up.mas_right).mas_equalTo(0);
+            make.size.mas_equalTo(self.up);
+            make.bottom.mas_equalTo(-10);
         }];
         [self.comment mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(_down.mas_right).mas_equalTo(0);
-            make.size.mas_equalTo(_up);
-            make.topMargin.mas_equalTo(_up.mas_topMargin);
+            make.left.mas_equalTo(self.down.mas_right).mas_equalTo(0);
+            make.size.mas_equalTo(self.up);
+            make.bottom.mas_equalTo(-10);
         }];
         [self.share mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.mas_equalTo(-10);
-            make.size.mas_equalTo(_up);
-            make.topMargin.mas_equalTo(_up.mas_topMargin);
+            make.size.mas_equalTo(self.up);
+            make.bottom.mas_equalTo(-10);
         }];
         
         
