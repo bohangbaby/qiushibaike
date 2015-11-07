@@ -16,9 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setImage:[UIImage imageNamed:@"logo"] forState:UIControlStateNormal];
-    btn.frame = CGRectMake(0, 0, 100, 40);
     
     UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [leftBtn setImage:[UIImage imageNamed:@"icon_review"] forState:UIControlStateNormal];
@@ -31,7 +28,7 @@
     leftBtn.imageEdgeInsets = UIEdgeInsetsMake(0, -40, 0, 0);
     rightBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -40);
     
-    self.navigationItem.titleView = btn;
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo"]];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
 }

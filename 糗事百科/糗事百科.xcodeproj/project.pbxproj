@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		220B907E1BED850C0028E2D4 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B907D1BED850C0028E2D4 /* BaseModel.m */; };
+		220B90811BED859C0028E2D4 /* QiuBaiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B90801BED859C0028E2D4 /* QiuBaiModel.m */; };
+		220B90841BED86D80028E2D4 /* QiuBaiViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B90831BED86D80028E2D4 /* QiuBaiViewModel.m */; };
+		220B908A1BED88510028E2D4 /* BaseNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B90891BED88510028E2D4 /* BaseNetworkManager.m */; };
+		220B90901BED89A60028E2D4 /* QiuBaiNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B908F1BED89A60028E2D4 /* QiuBaiNetworkManager.m */; };
 		226CEC481BECD0030061A5D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CEC471BECD0030061A5D8 /* main.m */; };
 		226CEC4B1BECD0030061A5D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CEC4A1BECD0030061A5D8 /* AppDelegate.m */; };
 		226CEC721BECD3620061A5D8 /* WMFooldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CEC681BECD3620061A5D8 /* WMFooldView.m */; };
@@ -31,6 +36,17 @@
 /* Begin PBXFileReference section */
 		03DC7845322B1F06E9C84BB7 /* Pods-糗事百科.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-糗事百科.release.xcconfig"; path = "Pods/Target Support Files/Pods-糗事百科/Pods-糗事百科.release.xcconfig"; sourceTree = "<group>"; };
 		0F93C2EBE22FA14F6E2C7F37 /* Pods-糗事百科.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-糗事百科.debug.xcconfig"; path = "Pods/Target Support Files/Pods-糗事百科/Pods-糗事百科.debug.xcconfig"; sourceTree = "<group>"; };
+		220B907C1BED850C0028E2D4 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		220B907D1BED850C0028E2D4 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		220B907F1BED859C0028E2D4 /* QiuBaiModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QiuBaiModel.h; sourceTree = "<group>"; };
+		220B90801BED859C0028E2D4 /* QiuBaiModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QiuBaiModel.m; sourceTree = "<group>"; };
+		220B90821BED86D80028E2D4 /* QiuBaiViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QiuBaiViewModel.h; sourceTree = "<group>"; };
+		220B90831BED86D80028E2D4 /* QiuBaiViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QiuBaiViewModel.m; sourceTree = "<group>"; };
+		220B90881BED88510028E2D4 /* BaseNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNetworkManager.h; sourceTree = "<group>"; };
+		220B90891BED88510028E2D4 /* BaseNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNetworkManager.m; sourceTree = "<group>"; };
+		220B908E1BED89A60028E2D4 /* QiuBaiNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QiuBaiNetworkManager.h; sourceTree = "<group>"; };
+		220B908F1BED89A60028E2D4 /* QiuBaiNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QiuBaiNetworkManager.m; sourceTree = "<group>"; };
+		220B90911BED8C8A0028E2D4 /* QiuBaiPathHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QiuBaiPathHeader.h; sourceTree = "<group>"; };
 		226CEC431BECD0030061A5D8 /* 糗事百科.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "糗事百科.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		226CEC471BECD0030061A5D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		226CEC491BECD0030061A5D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -218,6 +234,11 @@
 		E06754361BECF08E0021F3B1 /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
+				220B90881BED88510028E2D4 /* BaseNetworkManager.h */,
+				220B90891BED88510028E2D4 /* BaseNetworkManager.m */,
+				220B90911BED8C8A0028E2D4 /* QiuBaiPathHeader.h */,
+				220B908E1BED89A60028E2D4 /* QiuBaiNetworkManager.h */,
+				220B908F1BED89A60028E2D4 /* QiuBaiNetworkManager.m */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -225,6 +246,10 @@
 		E06754371BECF08E0021F3B1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				220B907C1BED850C0028E2D4 /* BaseModel.h */,
+				220B907D1BED850C0028E2D4 /* BaseModel.m */,
+				220B907F1BED859C0028E2D4 /* QiuBaiModel.h */,
+				220B90801BED859C0028E2D4 /* QiuBaiModel.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -253,6 +278,8 @@
 		E06754391BECF08E0021F3B1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				220B90821BED86D80028E2D4 /* QiuBaiViewModel.h */,
+				220B90831BED86D80028E2D4 /* QiuBaiViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -381,9 +408,13 @@
 			files = (
 				E067544B1BECF2EA0021F3B1 /* ChatViewController.m in Sources */,
 				E06754421BECF1E90021F3B1 /* BaseTabBarController.m in Sources */,
+				220B907E1BED850C0028E2D4 /* BaseModel.m in Sources */,
 				E067544E1BECF3040021F3B1 /* MeViewController.m in Sources */,
 				E06754481BECF2C00021F3B1 /* DiscoverViewController.m in Sources */,
+				220B90901BED89A60028E2D4 /* QiuBaiNetworkManager.m in Sources */,
 				226CEC721BECD3620061A5D8 /* WMFooldView.m in Sources */,
+				220B90811BED859C0028E2D4 /* QiuBaiModel.m in Sources */,
+				220B90841BED86D80028E2D4 /* QiuBaiViewModel.m in Sources */,
 				226CEC741BECD3620061A5D8 /* WMMenuView.m in Sources */,
 				E067543F1BECF1CC0021F3B1 /* MainViewController.m in Sources */,
 				226CEC761BECD3620061A5D8 /* WMPageController.m in Sources */,
@@ -393,6 +424,7 @@
 				E06754451BECF2A40021F3B1 /* FriendViewController.m in Sources */,
 				226CEC7A1BECD40D0061A5D8 /* AppDelegate+Category.m in Sources */,
 				226CEC731BECD3620061A5D8 /* WMMenuItem.m in Sources */,
+				220B908A1BED88510028E2D4 /* BaseNetworkManager.m in Sources */,
 				E06754531BECFD240021F3B1 /* BaseNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,7 +538,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				GCC_PREFIX_HEADER = "";
+				GCC_PREFIX_HEADER = "糗事百科/Resoure/PrefixHeader.pch";
 				INFOPLIST_FILE = "糗事百科/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hzq.----";
@@ -521,7 +553,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				GCC_PREFIX_HEADER = "";
+				GCC_PREFIX_HEADER = "糗事百科/Resoure/PrefixHeader.pch";
 				INFOPLIST_FILE = "糗事百科/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hzq.----";
