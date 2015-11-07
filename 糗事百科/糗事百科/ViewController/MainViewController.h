@@ -11,6 +11,5 @@
 
 @interface MainViewController : WMPageController
 
-+ (UINavigationController *)standardQiuBaiNavi;
 
 @end

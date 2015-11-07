@@ -25,12 +25,6 @@
     /** ================================================================ */
     //          数据测试
     /** ================================================================ */
-    [QiuBaiNetworkManager getQiuBaiModelWithType:QiuBaiTypeLatest andPage:2 completionHandle:^(QiuBaiModel *model, NSError *error) {
-        if (error) {
-            NSLog(@"数据未通过");
-        }
-    }];
-    
     
     
     

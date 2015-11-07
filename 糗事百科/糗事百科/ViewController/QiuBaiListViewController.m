@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) QiuBaiViewModel *qiuBaiVM;
 @property (nonatomic) CGFloat cellHeigth;
+@property (nonatomic) QiuBaiType type;
 
 @end
 
@@ -25,7 +26,9 @@
      *  注册ListTextCell
      */
     self.cellHeigth = 0;
-    self.qiuBaiVM.type = QiuBaiTypeText;
+    self.qiuBaiVM.type = self.type;
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"default_pic_mask"]];
     [self.tableView registerClass:[ListTextCell class] forCellReuseIdentifier:@"ListTextCell"];
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
@@ -80,8 +83,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ListTextCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListTextCell" forIndexPath:indexPath];
-//    [cell.icon setImageWithURL:[self.qiuBaiVM iconForRow:indexPath.section]];
-    cell.icon.image = [UIImage imageNamed:@"icon_anonymous"];
+    [cell.icon setImageWithURL:[self.qiuBaiVM iconForRow:indexPath.section] placeholderImage:[UIImage imageNamed:@"icon_anonymous"]];
     cell.nikeName.text = [self.qiuBaiVM nikeNameForRow:indexPath.section];
     cell.type.hidden = YES;
     cell.content.text = [self.qiuBaiVM textContentForRow:indexPath.section];
@@ -109,52 +111,13 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 10;
+    if (section == 0) {
+        return 1;
+    }
+    return 8;
 }
 
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -15,7 +15,6 @@
 		220B90941BEDA0590028E2D4 /* QiuBaiListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B90931BEDA0590028E2D4 /* QiuBaiListViewController.m */; };
 		220B90971BEDA0C70028E2D4 /* ListTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B90961BEDA0C70028E2D4 /* ListTextCell.m */; };
 		220B909A1BEDA45C0028E2D4 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B90991BEDA45C0028E2D4 /* UIView+Extension.m */; };
-		226C64A11BEDDF44006C6062 /* discover_ftue.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 226C64A01BEDDF44006C6062 /* discover_ftue.jpg */; };
 		226CEC481BECD0030061A5D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CEC471BECD0030061A5D8 /* main.m */; };
 		226CEC4B1BECD0030061A5D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CEC4A1BECD0030061A5D8 /* AppDelegate.m */; };
 		226CEC721BECD3620061A5D8 /* WMFooldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CEC681BECD3620061A5D8 /* WMFooldView.m */; };
@@ -34,7 +33,10 @@
 		E067544B1BECF2EA0021F3B1 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E067544A1BECF2EA0021F3B1 /* ChatViewController.m */; };
 		E067544E1BECF3040021F3B1 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E067544D1BECF3040021F3B1 /* MeViewController.m */; };
 		E06754531BECFD240021F3B1 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06754521BECFD240021F3B1 /* BaseNavigationController.m */; };
-		E5B1AA20F25CB2FCCCCCA541 /* libPods-糗事百科.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD7A814E277B40675C33BB6 /* libPods-糗事百科.a */; };
+		E0B72AE41BEE161B00FC37C7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B72AE31BEE161B00FC37C7 /* LoginViewController.m */; };
+		E0B72AE71BEE444600FC37C7 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B72AE61BEE444600FC37C7 /* SettingViewController.m */; };
+		E0B72AEA1BEE528400FC37C7 /* UIButtonSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B72AE91BEE528400FC37C7 /* UIButtonSubView.m */; };
+		E5B1AA20F25CB2FCCCCCA541 /* libPods-糗事百科.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD7A814E277B40675C33BB6 /* libPods-糗事百科.a */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +59,6 @@
 		220B90961BEDA0C70028E2D4 /* ListTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTextCell.m; sourceTree = "<group>"; };
 		220B90981BEDA45C0028E2D4 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		220B90991BEDA45C0028E2D4 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
-		226C64A01BEDDF44006C6062 /* discover_ftue.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = discover_ftue.jpg; sourceTree = "<group>"; };
 		226CEC431BECD0030061A5D8 /* 糗事百科.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "糗事百科.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		226CEC471BECD0030061A5D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		226CEC491BECD0030061A5D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -96,6 +97,12 @@
 		E06754501BECF3C70021F3B1 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		E06754511BECFD240021F3B1 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		E06754521BECFD240021F3B1 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		E0B72AE21BEE161B00FC37C7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		E0B72AE31BEE161B00FC37C7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		E0B72AE51BEE444600FC37C7 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		E0B72AE61BEE444600FC37C7 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		E0B72AE81BEE528400FC37C7 /* UIButtonSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIButtonSubView.h; sourceTree = "<group>"; };
+		E0B72AE91BEE528400FC37C7 /* UIButtonSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIButtonSubView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +138,8 @@
 		226CEC451BECD0030061A5D8 /* 糗事百科 */ = {
 			isa = PBXGroup;
 			children = (
+				226CEC491BECD0030061A5D8 /* AppDelegate.h */,
+				226CEC4A1BECD0030061A5D8 /* AppDelegate.m */,
 				E06754341BECF08E0021F3B1 /* Define */,
 				E06754351BECF08E0021F3B1 /* Model */,
 				E06754361BECF08E0021F3B1 /* NetworkManager */,
@@ -140,8 +149,6 @@
 				E067542D1BECEFBA0021F3B1 /* Resoure */,
 				226CEC771BECD3DD0061A5D8 /* Util */,
 				226CEC601BECD1C80061A5D8 /* Vendor */,
-				226CEC491BECD0030061A5D8 /* AppDelegate.h */,
-				226CEC4A1BECD0030061A5D8 /* AppDelegate.m */,
 				226CEC461BECD0030061A5D8 /* Supporting Files */,
 			);
 			path = "糗事百科";
@@ -193,6 +200,8 @@
 		226CEC771BECD3DD0061A5D8 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				E0B72AE81BEE528400FC37C7 /* UIButtonSubView.h */,
+				E0B72AE91BEE528400FC37C7 /* UIButtonSubView.m */,
 				220B90981BEDA45C0028E2D4 /* UIView+Extension.h */,
 				220B90991BEDA45C0028E2D4 /* UIView+Extension.m */,
 				226CEC781BECD40D0061A5D8 /* AppDelegate+Category.h */,
@@ -221,7 +230,6 @@
 		E067542D1BECEFBA0021F3B1 /* Resoure */ = {
 			isa = PBXGroup;
 			children = (
-				226C64A01BEDDF44006C6062 /* discover_ftue.jpg */,
 				E06754501BECF3C70021F3B1 /* PrefixHeader.pch */,
 				E06754181BECE3A20021F3B1 /* Assets.xcassets */,
 				E06754211BECE3C40021F3B1 /* LaunchScreen.storyboard */,
@@ -289,6 +297,10 @@
 				E067544D1BECF3040021F3B1 /* MeViewController.m */,
 				220B90921BEDA0590028E2D4 /* QiuBaiListViewController.h */,
 				220B90931BEDA0590028E2D4 /* QiuBaiListViewController.m */,
+				E0B72AE21BEE161B00FC37C7 /* LoginViewController.h */,
+				E0B72AE31BEE161B00FC37C7 /* LoginViewController.m */,
+				E0B72AE51BEE444600FC37C7 /* SettingViewController.h */,
+				E0B72AE61BEE444600FC37C7 /* SettingViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -337,6 +349,11 @@
 					226CEC421BECD0030061A5D8 = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = YG4395XX5U;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -365,7 +382,6 @@
 			files = (
 				E06754261BECE3C40021F3B1 /* Main.storyboard in Resources */,
 				E067541E1BECE3A20021F3B1 /* Assets.xcassets in Resources */,
-				226C64A11BEDDF44006C6062 /* discover_ftue.jpg in Resources */,
 				E06754251BECE3C40021F3B1 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				220B90941BEDA0590028E2D4 /* QiuBaiListViewController.m in Sources */,
+				E0B72AEA1BEE528400FC37C7 /* UIButtonSubView.m in Sources */,
 				E067544B1BECF2EA0021F3B1 /* ChatViewController.m in Sources */,
 				E06754421BECF1E90021F3B1 /* BaseTabBarController.m in Sources */,
 				220B907E1BED850C0028E2D4 /* BaseModel.m in Sources */,
@@ -433,11 +450,13 @@
 				E06754481BECF2C00021F3B1 /* DiscoverViewController.m in Sources */,
 				220B90901BED89A60028E2D4 /* QiuBaiNetworkManager.m in Sources */,
 				226CEC721BECD3620061A5D8 /* WMFooldView.m in Sources */,
+				E0B72AE41BEE161B00FC37C7 /* LoginViewController.m in Sources */,
 				220B90811BED859C0028E2D4 /* QiuBaiModel.m in Sources */,
 				220B90841BED86D80028E2D4 /* QiuBaiViewModel.m in Sources */,
 				226CEC741BECD3620061A5D8 /* WMMenuView.m in Sources */,
 				E067543F1BECF1CC0021F3B1 /* MainViewController.m in Sources */,
 				226CEC761BECD3620061A5D8 /* WMPageController.m in Sources */,
+				E0B72AE71BEE444600FC37C7 /* SettingViewController.m in Sources */,
 				226CEC4B1BECD0030061A5D8 /* AppDelegate.m in Sources */,
 				226CEC751BECD3620061A5D8 /* WMProgressView.m in Sources */,
 				226CEC481BECD0030061A5D8 /* main.m in Sources */,
@@ -565,6 +584,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hzq.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -580,6 +600,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hzq.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

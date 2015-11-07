@@ -17,6 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationBar.translucent = NO;
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    dic[NSFontAttributeName] = [UIFont boldSystemFontOfSize:18];
+    
+    self.navigationBar.titleTextAttributes = dic;
 }
 
 - (void)didReceiveMemoryWarning {

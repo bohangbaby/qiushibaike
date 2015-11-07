@@ -15,6 +15,7 @@
 #import "BaseNavigationController.h"
 #import "QiuBaiListViewController.h"
 
+
 @interface BaseTabBarController ()
 
 @end
@@ -24,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     /** 糗事控制器 */
-    UINavigationController *mainVC = [MainViewController standardQiuBaiNavi];
+    MainViewController *mainVC = [self mainVCStyle];
     [self setChildVC:mainVC andTitle:@"糗事" andNormalImage:@"icon_main" andSelectedImage:@"icon_main_active"];
     /** 糗友圈控制器 */
     FriendViewController *friendVC = [[FriendViewController alloc] init];
@@ -51,16 +52,11 @@
  *  @param selectedImage tabBarItem中的被选中时的图片
  */
 - (void)setChildVC:(UIViewController *)vc andTitle:(NSString *)title andNormalImage:(NSString *)normalImage andSelectedImage:(NSString *)selectedImage {
-    if (vc == [UINavigationController class]) {
-        [self addChildViewController:vc];
-        return;
-    }
     [vc.tabBarItem setImage:[UIImage imageNamed:normalImage]];
     vc.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     vc.tabBarItem.title = title;
     
     NSMutableDictionary *textNormalAtt = [NSMutableDictionary dictionary];
-    //    textNormalAtt[NSForegroundColorAttributeName] = [UIColor colorWithRed:123 green:<#(CGFloat)#> blue:<#(CGFloat)#> alpha:<#(CGFloat)#>]
     NSMutableDictionary *textSelectedAtt = [NSMutableDictionary dictionary];
     textSelectedAtt[NSForegroundColorAttributeName] = [UIColor orangeColor];
     [vc.tabBarItem setTitleTextAttributes:textNormalAtt forState:UIControlStateNormal];
@@ -69,5 +65,53 @@
     [self addChildViewController:nav];
     
 }
+
+
+- (MainViewController *)mainVCStyle {
+    MainViewController *vc = [[MainViewController alloc] initWithViewControllerClasses:[self itemControllerClass] andTheirTitles:[self itemNames]];
+    vc.keys = [self vcKeys];
+    vc.values = [self vcValues];
+    vc.menuViewStyle = WMMenuViewStyleLine;
+    vc.menuItemWidth = kWindowW/6.0;
+    vc.progressColor = [UIColor orangeColor];
+    vc.titleColorSelected = [UIColor orangeColor];
+    vc.titleSizeNormal = 18;
+    vc.titleSizeSelected = 18;
+    vc.progressHeight = 3;
+    
+    return vc;
+}
+
+- (NSArray *)itemNames {
+    return @[@"专享",@"视频",@"纯文",@"纯图",@"精华",@"最新"];
+}
+
+- (NSArray *)itemControllerClass {
+    NSMutableArray *arr = [NSMutableArray array];
+    for (int i = 0; i < 6; i++) {
+        [arr addObject:[QiuBaiListViewController class]];
+    }
+    return [arr copy];
+}
+
+- (NSArray *)vcKeys {
+    NSMutableArray *arr = [NSMutableArray array];
+    NSInteger count = [self itemNames].count;
+    for (int i = 0; i < count; i++) {
+        [arr addObject:@"type"];
+    }
+    return [arr copy];
+}
+
+- (NSArray *)vcValues {
+    NSMutableArray *arr = [NSMutableArray array];
+    NSInteger count = [self itemNames].count;
+    for (int i = 0; i <count ; i++) {
+        [arr addObject:@(i)];
+    }
+    return [arr copy];
+}
+
+
 
 @end

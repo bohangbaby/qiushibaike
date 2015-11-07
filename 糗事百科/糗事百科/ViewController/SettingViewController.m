@@ -1,27 +1,26 @@
 //
-//  ChatViewController.m
+//  SettingViewController.m
 //  糗事百科
 //
-//  Created by Hanten on 15/11/6.
+//  Created by Hanten on 15/11/7.
 //  Copyright © 2015年 hzq. All rights reserved.
 //
 
-#import "ChatViewController.h"
-#import "LoginViewController.h"
+#import "SettingViewController.h"
 
-@interface ChatViewController ()
+@interface SettingViewController ()
 
 @end
 
-@implementation ChatViewController
+@implementation SettingViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    LoginViewController *loginVC = [LoginViewController new];
-    loginVC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:loginVC animated:YES];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    self.tableView.backgroundColor = kRGBColor(247, 247, 247);
+    self.tableView.separatorColor = kRGBColor(247, 247, 247);
+    self.tableView.tableFooterView = [UIView new];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -31,24 +30,62 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    switch (section) {
+        case 0:
+            return 1;
+        case 1:
+        case 2:
+        case 3:
+            return 2;
+        default:
+            return 0;
+    }
 }
 
-/*
+kRemoveCellSeparator
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    switch (indexPath.section) {
+        case 0:
+            cell.textLabel.text = @"账号绑定";
+            break;
+        case 1:
+            if (indexPath.row == 0) {
+                cell.textLabel.text = @"消息提醒";
+            }else
+                cell.textLabel.text = @"小纸条";
+            break;
+        case 2:
+            if (indexPath.row == 0) {
+                cell.textLabel.text = @"黑名单";
+            }else
+                cell.textLabel.text = @"常规";
+            break;
+        case 3:
+            if (indexPath.row == 0) {
+                cell.textLabel.text = @"意见反馈";
+            }else
+                cell.textLabel.text = @"关于糗百";
+            break;
+        default:
+            break;
+    }
+
     return cell;
 }
-*/
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 10;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 
 /*
 // Override to support conditional editing of the table view.
