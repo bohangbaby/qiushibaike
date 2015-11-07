@@ -34,7 +34,6 @@
         _content = [UILabel new];
         _content.font = [UIFont systemFontOfSize:18];
         _content.numberOfLines = 0;
-        _content.backgroundColor = [UIColor blueColor];
     }
     return _content;
 }
@@ -129,23 +128,23 @@
         }];
         [self.up mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(10);
-            make.bottom.mas_equalTo(-10);
+            make.top.mas_equalTo(_votes.mas_bottom).mas_equalTo(5);
             make.size.mas_equalTo(CGSizeMake(60, 40));
         }];
         [self.down mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(self.up.mas_right).mas_equalTo(0);
             make.size.mas_equalTo(self.up);
-            make.bottom.mas_equalTo(-10);
+            make.top.mas_equalTo(_votes.mas_bottom).mas_equalTo(5);
         }];
         [self.comment mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(self.down.mas_right).mas_equalTo(0);
             make.size.mas_equalTo(self.up);
-            make.bottom.mas_equalTo(-10);
+            make.top.mas_equalTo(_votes.mas_bottom).mas_equalTo(5);
         }];
         [self.share mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.mas_equalTo(-10);
             make.size.mas_equalTo(self.up);
-            make.bottom.mas_equalTo(-10);
+            make.top.mas_equalTo(_votes.mas_bottom).mas_equalTo(5);
         }];
         
         

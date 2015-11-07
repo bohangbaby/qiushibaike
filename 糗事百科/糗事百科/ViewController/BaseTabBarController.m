@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     /** 糗事控制器 */
-    QiuBaiListViewController *mainVC = [[QiuBaiListViewController alloc] init];
+    UINavigationController *mainVC = [MainViewController standardQiuBaiNavi];
     [self setChildVC:mainVC andTitle:@"糗事" andNormalImage:@"icon_main" andSelectedImage:@"icon_main_active"];
     /** 糗友圈控制器 */
     FriendViewController *friendVC = [[FriendViewController alloc] init];
@@ -51,20 +51,23 @@
  *  @param selectedImage tabBarItem中的被选中时的图片
  */
 - (void)setChildVC:(UIViewController *)vc andTitle:(NSString *)title andNormalImage:(NSString *)normalImage andSelectedImage:(NSString *)selectedImage {
+    if (vc == [UINavigationController class]) {
+        [self addChildViewController:vc];
+        return;
+    }
     [vc.tabBarItem setImage:[UIImage imageNamed:normalImage]];
     vc.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     vc.tabBarItem.title = title;
     
     NSMutableDictionary *textNormalAtt = [NSMutableDictionary dictionary];
-//    textNormalAtt[NSForegroundColorAttributeName] = [UIColor colorWithRed:123 green:<#(CGFloat)#> blue:<#(CGFloat)#> alpha:<#(CGFloat)#>]
+    //    textNormalAtt[NSForegroundColorAttributeName] = [UIColor colorWithRed:123 green:<#(CGFloat)#> blue:<#(CGFloat)#> alpha:<#(CGFloat)#>]
     NSMutableDictionary *textSelectedAtt = [NSMutableDictionary dictionary];
     textSelectedAtt[NSForegroundColorAttributeName] = [UIColor orangeColor];
     [vc.tabBarItem setTitleTextAttributes:textNormalAtt forState:UIControlStateNormal];
     [vc.tabBarItem setTitleTextAttributes:textSelectedAtt forState:UIControlStateSelected];
-    
     BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:vc];
-    
     [self addChildViewController:nav];
+    
 }
 
 @end

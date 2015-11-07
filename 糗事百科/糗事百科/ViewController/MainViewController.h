@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WMPageController.h"
 
-@interface MainViewController : UITableViewController
+@interface MainViewController : WMPageController
+
++ (UINavigationController *)standardQiuBaiNavi;
 
 @end

@@ -101,7 +101,7 @@
 - (CGFloat)height:(NSString *)text {
     //设置计算文本时字体的大小,以什么标准来计算
     NSDictionary *attrbute = @{NSFontAttributeName:[UIFont systemFontOfSize:18]};
-    return [text boundingRectWithSize:CGSizeMake(self.tableView.contentSize.width, 1000) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attrbute context:nil].size.height;
+    return [text boundingRectWithSize:CGSizeMake(self.tableView.contentSize.width, 2000) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attrbute context:nil].size.height;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
