@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "AppDelegate+Category.h"
 #import "BaseTabBarController.h"
+#import "QiuBaiNetworkManager.h"
 
 @interface AppDelegate ()
 
@@ -21,6 +22,24 @@
     // Override point for customization after application launch.
     BaseTabBarController *vc = [[BaseTabBarController alloc] init];
     self.window.rootViewController = vc;
+    /** ================================================================ */
+    //          数据测试
+    /** ================================================================ */
+    [QiuBaiNetworkManager getQiuBaiModelWithType:QiuBaiTypeLatest andPage:2 completionHandle:^(QiuBaiModel *model, NSError *error) {
+        if (error) {
+            NSLog(@"数据未通过");
+        }
+    }];
+    
+    
+    
+    
+    
+    /** ================================================================ */
+    
+    
+    
+    
     
     return YES;
 }
