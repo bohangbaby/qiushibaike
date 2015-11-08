@@ -36,6 +36,8 @@
 		E0B72AE41BEE161B00FC37C7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B72AE31BEE161B00FC37C7 /* LoginViewController.m */; };
 		E0B72AE71BEE444600FC37C7 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B72AE61BEE444600FC37C7 /* SettingViewController.m */; };
 		E0B72AEA1BEE528400FC37C7 /* UIButtonSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B72AE91BEE528400FC37C7 /* UIButtonSubView.m */; };
+		E0C2E4061BEF5A2C00A78278 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0C2E4051BEF5A2C00A78278 /* AVFoundation.framework */; };
+		E0C2E4081BEF5A3400A78278 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0C2E4071BEF5A3400A78278 /* AVKit.framework */; };
 		E5B1AA20F25CB2FCCCCCA541 /* libPods-糗事百科.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD7A814E277B40675C33BB6 /* libPods-糗事百科.a */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
@@ -103,6 +105,8 @@
 		E0B72AE61BEE444600FC37C7 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		E0B72AE81BEE528400FC37C7 /* UIButtonSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIButtonSubView.h; sourceTree = "<group>"; };
 		E0B72AE91BEE528400FC37C7 /* UIButtonSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIButtonSubView.m; sourceTree = "<group>"; };
+		E0C2E4051BEF5A2C00A78278 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E0C2E4071BEF5A3400A78278 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0C2E4081BEF5A3400A78278 /* AVKit.framework in Frameworks */,
+				E0C2E4061BEF5A2C00A78278 /* AVFoundation.framework in Frameworks */,
 				E5B1AA20F25CB2FCCCCCA541 /* libPods-糗事百科.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,6 +228,8 @@
 		66906E49FB185F3EC6AE7FBA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E0C2E4071BEF5A3400A78278 /* AVKit.framework */,
+				E0C2E4051BEF5A2C00A78278 /* AVFoundation.framework */,
 				5BD7A814E277B40675C33BB6 /* libPods-糗事百科.a */,
 			);
 			name = Frameworks;

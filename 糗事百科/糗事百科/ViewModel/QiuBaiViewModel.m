@@ -65,6 +65,15 @@
     }
     return [self userModelForRow:row].login;
 }
+
+/**
+ *  糗事类型
+ */
+- (NSString *)typeForRow:(NSInteger)row {
+    return [self itemsModelForRow:row].type;
+}
+
+
 /**
  *  文字内容
  */
@@ -75,7 +84,6 @@
  *  图片内容
  */
 - (NSURL *)imageContentForRow:(NSInteger)row {
-    // http://pic.qiushibaike.com/system/pictures/11370/113702548/medium/app113702548.jpg
     NSString *path = @"http://pic.qiushibaike.com/system/pictures/";
     NSString *createId = [NSString stringWithFormat:@"%ld",[self itemsModelForRow:row].ID];
     NSString *iconStr = @"";
@@ -83,7 +91,6 @@
         NSString *leadId = [createId substringWithRange:NSMakeRange(0, 5)];
         iconStr = [NSString stringWithFormat:@"%@/%@/%@/medium/%@",path,leadId,createId,[self itemsModelForRow:row].image];
     }
-    NSLog(@"图片地址:%@",iconStr);
     return [NSURL URLWithString:iconStr];
 }
 /**
@@ -130,7 +137,34 @@
     NSInteger up = [self votesModelForRow:row].up;
     NSInteger down = [self votesModelForRow:row].down;
     NSInteger commentNum = [self itemsModelForRow:row].comments_count;
-    return [NSString stringWithFormat:@"好笑 %ld · 评论 %ld",up - down,commentNum];
+    NSInteger shareCount = [self itemsModelForRow:row].share_count;
+    NSInteger loopCount = [self itemsModelForRow:row].loop;
+    
+    NSString *commentStr = [NSString stringWithFormat:@" · 评论 %ld",commentNum];
+    if (commentNum == 0) {
+        commentStr = @"";
+    }else if (commentNum > 10000) {
+        commentStr = [NSString stringWithFormat:@" · 评论 %ld万",commentNum/10000];
+    }
+    
+    
+    NSString *shareStr = [NSString stringWithFormat:@" · 分享 %ld",shareCount];
+    if (shareCount == 0) {
+        shareStr = @"";
+    }else if (shareCount > 10000) {
+        shareStr = [NSString stringWithFormat:@" · 分享 %ld万",shareCount/10000];
+    }
+    
+    
+    NSString *loopStr = [NSString stringWithFormat:@" · 再生 %ld",loopCount];
+    if (loopCount == 0) {
+        loopStr = @"";
+    }else if (loopCount > 10000) {
+        loopStr = [NSString stringWithFormat:@" · 再生 %ld万",loopCount/10000];
+    }
+    
+    
+    return [NSString stringWithFormat:@"好笑 %ld%@%@%@",up - down,commentStr,shareStr,loopStr];
 }
 
 

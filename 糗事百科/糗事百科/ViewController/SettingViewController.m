@@ -20,6 +20,7 @@
     self.tableView.backgroundColor = kRGBColor(247, 247, 247);
     self.tableView.separatorColor = kRGBColor(247, 247, 247);
     self.tableView.tableFooterView = [UIView new];
+    
 }
 
 - (void)didReceiveMemoryWarning {

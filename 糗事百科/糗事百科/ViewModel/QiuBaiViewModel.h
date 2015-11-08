@@ -37,6 +37,10 @@
  */
 - (NSString *)nikeNameForRow:(NSInteger)row;
 /**
+ *  糗事类型
+ */
+- (NSString *)typeForRow:(NSInteger)row;
+/**
  *  文字内容
  */
 - (NSString *)textContentForRow:(NSInteger)row;

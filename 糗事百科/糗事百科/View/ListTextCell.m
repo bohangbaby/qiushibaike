@@ -7,10 +7,16 @@
 //
 
 #import "ListTextCell.h"
+#import <AVKit/AVKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @implementation ListTextCell
 
 #pragma mark - 懒加载
+
+/**
+ *  头部
+ */
 - (UIImageView *)icon {
     if (_icon == nil) {
         _icon = [UIImageView new];
@@ -29,6 +35,28 @@
     return _nikeName;
 }
 
+- (UIButton *)type {
+    if (_type == nil) {
+        _type = [UIButton new];
+        [_type setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [_type setTitleEdgeInsets:UIEdgeInsetsMake(0, 15, 0, 0)];
+        _type.titleLabel.font = [UIFont systemFontOfSize:13];
+    }
+    return _type;
+}
+
+- (UIButton *)userInfo {
+    if (_userInfo == nil) {
+        _userInfo = [UIButton new];
+        _userInfo.backgroundColor = [UIColor clearColor];
+    }
+    return _userInfo;
+}
+
+
+/**
+ *  中部
+ */
 - (UILabel *)content {
     if (_content == nil) {
         _content = [UILabel new];
@@ -42,6 +70,7 @@
 - (UIImageView *)contentImg {
     if (_contentImg == nil) {
         _contentImg = [UIImageView new];
+        _contentImg.backgroundColor = [UIColor yellowColor];
     }
     return _contentImg;
 }
@@ -49,15 +78,28 @@
 - (UIImageView *)videoImg {
     if (_videoImg == 0) {
         _videoImg = [UIImageView new];
+        _videoImg.backgroundColor = [UIColor lightGrayColor];
     }
     return _videoImg;
 }
 
-- (UIButton *)type {
-    if (_type == nil) {
-        _type = [UIButton new];
+- (UIButton *)playVideo {
+    if (_playVideo == nil) {
+        _playVideo = [UIButton new];
+        [_playVideo setImage:[UIImage imageNamed:@"multimedia_videocard_play"] forState:UIControlStateNormal];
     }
-    return _type;
+    return _playVideo;
+}
+
+
+/**
+ *  底部
+ */
+- (UIView *)footerView {
+    if (_footerView == nil) {
+        _footerView = [UIView new];
+    }
+    return _footerView;
 }
 
 - (UILabel *)votes {
@@ -74,6 +116,10 @@
         _up = [UIButton new];
         [_up setImage:[UIImage imageNamed:@"icon_for"] forState:UIControlStateNormal];
         [_up setImage:[UIImage imageNamed:@"icon_for_active"] forState:UIControlStateSelected];
+        [_up bk_addEventHandler:^(id sender) {
+            _up.selected = YES;
+            _down.selected = NO;
+        } forControlEvents:UIControlEventTouchUpInside];
     }
     return _up;
 }
@@ -83,6 +129,10 @@
         _down = [UIButton new];
         [_down setImage:[UIImage imageNamed:@"icon_against"] forState:UIControlStateNormal];
         [_down setImage:[UIImage imageNamed:@"icon_against_active"] forState:UIControlStateSelected];
+        [_down bk_addEventHandler:^(id sender) {
+            _down.selected = YES;
+            _up.selected = NO;
+        } forControlEvents:UIControlEventTouchUpInside];
     }
     return _down;
 }
@@ -103,21 +153,33 @@
     return _share;
 }
 
+#pragma merk - 添加布局
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         
+        // 头部
         [self.contentView addSubview:self.icon];
-        [self.contentView addSubview:self.up];
-        [self.contentView addSubview:self.down];
-        [self.contentView addSubview:self.share];
-        [self.contentView addSubview:self.comment];
         [self.contentView addSubview:self.nikeName];
         [self.contentView addSubview:self.type];
-        [self.contentView addSubview:self.votes];
+        [self.contentView addSubview:self.userInfo];
+        
+        // 中部
         [self.contentView addSubview:self.content];
         [self.contentView addSubview:self.contentImg];
         [self.contentView addSubview:self.videoImg];
+        [self.contentView addSubview:self.playVideo];
         
+        // 底部
+        [self.contentView addSubview:self.footerView];
+        [self.footerView addSubview:self.up];
+        [self.footerView addSubview:self.down];
+        [self.footerView addSubview:self.share];
+        [self.footerView addSubview:self.comment];
+        [self.footerView addSubview:self.votes];
+        
+        /**
+         *  头部控件的布局
+         */
         [self.icon mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.top.mas_equalTo(10);
             make.size.mas_equalTo(CGSizeMake(40, 40));
@@ -129,12 +191,21 @@
         }];
         [self.type mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.mas_equalTo(-10);
-            make.size.mas_equalTo(CGSizeMake(60, 50));
-            make.top.mas_equalTo(13);
+            make.size.mas_equalTo(CGSizeMake(60, 40));
+            make.top.mas_equalTo(10);
         }];
+        [self.userInfo mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.top.mas_equalTo(10);
+            make.right.mas_equalTo(-10);
+            make.height.mas_equalTo(60);
+        }];
+        
+        /**
+         *  中部控件的布局
+         */
         [self.content mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(10);
-            make.top.mas_equalTo(_icon.mas_bottom).mas_equalTo(10);
+            make.top.mas_equalTo(_userInfo.mas_bottom).mas_equalTo(0);
             make.right.mas_equalTo(-10);
         }];
         [self.contentImg mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -149,31 +220,44 @@
             make.right.mas_equalTo(-10);
             make.height.mas_equalTo(0);
         }];
-        [self.votes mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.videoImg.mas_bottom).mas_equalTo(10);
+        [self.playVideo mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(_videoImg);
+        }];
+        
+        /**
+         *  底部控件的布局
+         */
+        [self.footerView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(_videoImg.mas_bottom).mas_equalTo(10);
             make.left.mas_equalTo(10);
+            make.right.mas_equalTo(-10);
+            make.height.mas_equalTo(60);
+        }];
+        
+        [self.votes mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.top.mas_equalTo(0);
             make.height.mas_equalTo(20);
-            make.width.mas_equalTo(200);
+            make.width.mas_equalTo(kWindowW);
         }];
         [self.up mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(10);
-            make.top.mas_equalTo(_votes.mas_bottom).mas_equalTo(5);
-            make.size.mas_equalTo(CGSizeMake(60, 40));
+            make.left.mas_equalTo(0);
+            make.top.mas_equalTo(20);
+            make.size.mas_equalTo(CGSizeMake(40, 40));
         }];
         [self.down mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(self.up.mas_right).mas_equalTo(0);
+            make.left.mas_equalTo(self.up.mas_right).mas_equalTo(20);
             make.size.mas_equalTo(self.up);
-            make.top.mas_equalTo(_votes.mas_bottom).mas_equalTo(5);
+            make.top.mas_equalTo(20);
         }];
         [self.comment mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(self.down.mas_right).mas_equalTo(0);
+            make.left.mas_equalTo(self.down.mas_right).mas_equalTo(20);
             make.size.mas_equalTo(self.up);
-            make.top.mas_equalTo(_votes.mas_bottom).mas_equalTo(5);
+            make.top.mas_equalTo(20);
         }];
         [self.share mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.mas_equalTo(-10);
+            make.right.mas_equalTo(0);
             make.size.mas_equalTo(self.up);
-            make.top.mas_equalTo(_votes.mas_bottom).mas_equalTo(5);
+            make.top.mas_equalTo(20);
         }];
         
         
@@ -183,11 +267,6 @@
     
     return self;
 }
-
-
-
-
-
 
 
 

@@ -105,10 +105,23 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ListTextCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListTextCell" forIndexPath:indexPath];
+    
+    
     [cell.icon setImageWithURL:[self.qiuBaiVM iconForRow:indexPath.section] placeholderImage:[UIImage imageNamed:@"icon_anonymous"]];
     cell.nikeName.text = [self.qiuBaiVM nikeNameForRow:indexPath.section];
-    cell.type.hidden = YES;
+    
+    if ([[self.qiuBaiVM typeForRow:indexPath.section] isEqualToString:@"hot"]) {
+        [cell.type setImage:[UIImage imageNamed:@"subscribe_hot"] forState:UIControlStateNormal];
+        [cell.type setTitle:@"热门" forState:UIControlStateNormal];
+    }else if ([[self.qiuBaiVM typeForRow:indexPath.section] isEqualToString:@"fresh"]) {
+        [cell.type setImage:[UIImage imageNamed:@"subscribe_nearby"] forState:UIControlStateNormal];
+        [cell.type setTitle:@"新鲜" forState:UIControlStateNormal];
+    }else
+        cell.type.hidden = YES;
+    
+    
     cell.content.text = [self.qiuBaiVM textContentForRow:indexPath.section];
+    self.cellHeigth = [self height:cell.content.text];
     /**
      *  内容图片
      */
@@ -135,7 +148,6 @@
         make.right.mas_equalTo(-10);
         make.height.mas_equalTo(self.videoHeight);
     }];
-    self.cellHeigth = [self height:cell.content.text];
     cell.votes.text = [self.qiuBaiVM funNumberForRow:indexPath.section];
     return cell;
 }
@@ -144,12 +156,21 @@
 //    return UITableViewAutomaticDimension;
 //}
 
+/**
+ *  动态设置每个cell的高度：图片的高度+视频的高度+文字内容的高度+评论区、头部用户信息（150）
+ */
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 150 + self.imgHeight + self.cellHeigth + self.videoHeight;
 }
 
+/**
+ *  用来计算cell中的文字高度
+ *
+ *  @param text 传入的文字内容
+ *
+ *  @return 文字高度
+ */
 - (CGFloat)height:(NSString *)text {
-    //设置计算文本时字体的大小,以什么标准来计算
     NSDictionary *attrbute = @{NSFontAttributeName:[UIFont systemFontOfSize:18]};
     return [text boundingRectWithSize:CGSizeMake(self.tableView.contentSize.width, 2000) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attrbute context:nil].size.height;
 }
@@ -159,10 +180,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (section == 0) {
-        return 1;
-    }
-    return 8;
+    return 2;
 }
 
 
