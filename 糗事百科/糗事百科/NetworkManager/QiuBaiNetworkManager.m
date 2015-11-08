@@ -24,7 +24,7 @@
     switch (type) {
         case QiuBaiTypeVIP: {
             path = kVIPPath;
-            params = [[self pramaWithCount:30 page:page readarticles:@"%5B113662411%5D" AdID:@"1446810374427602FEE4DD"] copy];
+            params = [[self pramaWithCount:30 page:page readarticles:nil AdID:nil] copy];
             break;
         }
         case QiuBaiTypeVideo: {

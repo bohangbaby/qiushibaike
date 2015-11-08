@@ -7,9 +7,9 @@
 //
 
 #import "ChatViewController.h"
-#import "LoginViewController.h"
 
 @interface ChatViewController ()
+
 
 @end
 
@@ -17,15 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    LoginViewController *loginVC = [LoginViewController new];
-    loginVC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:loginVC animated:YES];
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source

@@ -27,37 +27,28 @@
      */
     self.cellHeigth = 0;
     self.qiuBaiVM.type = self.type;
+    /**
+     *  设置分割线的样式为无
+     */
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"default_pic_mask"]];
     [self.tableView registerClass:[ListTextCell class] forCellReuseIdentifier:@"ListTextCell"];
-    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-       [self.qiuBaiVM refreshDataComletionHandle:^(NSError *error) {
-           if (error) {
-               NSLog(@"ceshi");
-           }
-           [self.tableView.header endRefreshing];
-           [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-           dispatch_async(dispatch_get_main_queue(), ^{
-               [self.tableView reloadData];
-           });
-       }];
-    }];
-    [self.tableView.header beginRefreshing];
-    self.tableView.footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-        [self.qiuBaiVM getMoreDataComletionHandle:^(NSError *error) {
-            if (error) {
-                NSLog(@"ceshi");
-            }
-            [self.tableView.footer endRefreshing];
-            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.tableView reloadData];
-            });
-        }];
-    }];
     
+    
+    /**
+     *  数据刷新
+     */
+    MJRefreshGifHeader *header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
+    [header setImages:@[[UIImage imageNamed:@"loadmore_arrow"]] forState:MJRefreshStatePulling];
+    [header setImages:@[[UIImage imageNamed:@"loadmore_loading"]] duration:0.3 forState:MJRefreshStateRefreshing];
+    // 隐藏时间
+    header.lastUpdatedTimeLabel.hidden = YES;
+    // 隐藏状态
+    header.stateLabel.hidden = YES;
+    self.tableView.header = header;
+    [self.tableView.header beginRefreshing];
+
+    self.tableView.footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
     
 }
 
@@ -69,6 +60,35 @@
     return _qiuBaiVM;
 }
 
+#pragma mark - 加载数据
+/**
+ *  加载数据
+ */
+- (void)loadData {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    [self.qiuBaiVM refreshDataComletionHandle:^(NSError *error) {
+        [self.tableView.header endRefreshing];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }];
+
+}
+
+/**
+ *  加载更多数据
+ */
+- (void)loadMoreData {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    [self.qiuBaiVM getMoreDataComletionHandle:^(NSError *error) {
+        [self.tableView.footer endRefreshing];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }];
+}
 
 #pragma mark - Table view data source
 

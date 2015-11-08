@@ -14,7 +14,7 @@
 - (UIImageView *)icon {
     if (_icon == nil) {
         _icon = [UIImageView new];
-        _icon.layer.cornerRadius = _icon.width/2.0;
+        _icon.layer.cornerRadius = 20;
         _icon.layer.masksToBounds = YES;
     }
     return _icon;
@@ -24,7 +24,7 @@
     if (_nikeName == nil) {
         _nikeName = [UILabel new];
         _nikeName.font = [UIFont systemFontOfSize:18];
-        _nikeName.textColor = [UIColor grayColor];
+        _nikeName.textColor = kRGBColor(20, 20, 20);
     }
     return _nikeName;
 }
@@ -32,7 +32,8 @@
 - (UILabel *)content {
     if (_content == nil) {
         _content = [UILabel new];
-        _content.font = [UIFont systemFontOfSize:18];
+        _content.font = [UIFont systemFontOfSize:16];
+        _content.textColor = kRGBColor(50, 50, 50);
         _content.numberOfLines = 0;
     }
     return _content;
@@ -101,6 +102,7 @@
         [self.contentView addSubview:self.votes];
         [self.contentView addSubview:self.content];
         
+        
         [self.icon mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.top.mas_equalTo(10);
             make.size.mas_equalTo(CGSizeMake(40, 40));
@@ -117,7 +119,7 @@
         }];
         [self.content mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(10);
-            make.top.mas_equalTo(_icon.mas_bottom).mas_equalTo(5);
+            make.top.mas_equalTo(_icon.mas_bottom).mas_equalTo(10);
             make.right.mas_equalTo(-10);
         }];
         [self.votes mas_makeConstraints:^(MASConstraintMaker *make) {

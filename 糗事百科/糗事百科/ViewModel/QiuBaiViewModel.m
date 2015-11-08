@@ -44,13 +44,25 @@
  *  用户头像
  */
 - (NSURL *)iconForRow:(NSInteger)row {
-    NSURL *url = [NSURL URLWithString:[self userModelForRow:row].icon];
+    NSString *path = @"http://pic.qiushibaike.com/system/avtnew/";
+    NSString *createId = [NSString stringWithFormat:@"%ld",[self userModelForRow:row].ID];
+    NSString *iconStr = @"";
+    if (![createId isEqualToString:@"0"]) {
+        NSString *leadId = [createId substringWithRange:NSMakeRange(0, 4)];
+        iconStr = [NSString stringWithFormat:@"%@/%@/%@/medium/%@",path,leadId,createId,[self userModelForRow:row].icon];
+    }
+    
+    NSURL *url = [NSURL URLWithString:iconStr];
     return url;
 }
 /**
  *  用户名
  */
 - (NSString *)nikeNameForRow:(NSInteger)row {
+    NSString *createId = [NSString stringWithFormat:@"%ld",[self userModelForRow:row].ID];
+    if ([createId isEqualToString:@"0"]) {
+        return @"匿名用户";
+    }
     return [self userModelForRow:row].login;
 }
 /**
@@ -69,7 +81,8 @@
  *  视频内容地址
  */
 - (NSURL *)videoURLForRow:(NSInteger)row {
-    return [NSURL URLWithString:[self itemsModelForRow:row].low_url];
+    NSURL *videoURL = [NSURL URLWithString:[self itemsModelForRow:row].low_url];
+    return videoURL;
 }
 /**
  *  视频对应的图片

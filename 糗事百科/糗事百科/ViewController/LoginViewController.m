@@ -47,7 +47,7 @@
     loginButton.titleLabel.font = [UIFont boldSystemFontOfSize:18];
     [loginButton setTitle:@"登录" forState:UIControlStateNormal];
     [loginButton setBackgroundColor:[UIColor orangeColor]];
-    loginButton.layer.cornerRadius = 20;
+    loginButton.layer.cornerRadius = 3;
     loginButton.x = (kWindowW - 250) / 2.0;
     loginButton.size = CGSizeMake(250, 40);
     loginButton.y = 20;

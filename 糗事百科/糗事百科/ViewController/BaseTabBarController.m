@@ -14,9 +14,11 @@
 #import "MeViewController.h"
 #import "BaseNavigationController.h"
 #import "QiuBaiListViewController.h"
+#import "LoginViewController.h"
+#import "WMPageController.h"
 
 
-@interface BaseTabBarController ()
+@interface BaseTabBarController ()<UITabBarControllerDelegate>
 
 @end
 
@@ -24,8 +26,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.delegate = self;
     /** 糗事控制器 */
     MainViewController *mainVC = [self mainVCStyle];
+    mainVC.tabBarItem.tag = 200;
     [self setChildVC:mainVC andTitle:@"糗事" andNormalImage:@"icon_main" andSelectedImage:@"icon_main_active"];
     /** 糗友圈控制器 */
     FriendViewController *friendVC = [[FriendViewController alloc] init];
@@ -35,6 +39,7 @@
     [self setChildVC:discoverVC andTitle:@"发现" andNormalImage:@"main_tab_discovery" andSelectedImage:@"main_tab_discovery_active"];
     /** 小纸条控制器 */
     ChatViewController *chatVC = [[ChatViewController alloc] init];
+    chatVC.tabBarItem.tag = 100;
     [self setChildVC:chatVC andTitle:@"小纸条" andNormalImage:@"icon_chat" andSelectedImage:@"icon_chat_active"];
     /** 我的控制器 */
     MeViewController *meVC = [[MeViewController alloc] init];
@@ -55,10 +60,9 @@
     [vc.tabBarItem setImage:[UIImage imageNamed:normalImage]];
     vc.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     vc.tabBarItem.title = title;
-    
     NSMutableDictionary *textNormalAtt = [NSMutableDictionary dictionary];
     NSMutableDictionary *textSelectedAtt = [NSMutableDictionary dictionary];
-    textSelectedAtt[NSForegroundColorAttributeName] = [UIColor orangeColor];
+    textSelectedAtt[NSForegroundColorAttributeName] = kRGBColor(255, 160, 21);
     [vc.tabBarItem setTitleTextAttributes:textNormalAtt forState:UIControlStateNormal];
     [vc.tabBarItem setTitleTextAttributes:textSelectedAtt forState:UIControlStateSelected];
     BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:vc];
@@ -73,8 +77,8 @@
     vc.values = [self vcValues];
     vc.menuViewStyle = WMMenuViewStyleLine;
     vc.menuItemWidth = kWindowW/6.0;
-    vc.progressColor = [UIColor orangeColor];
-    vc.titleColorSelected = [UIColor orangeColor];
+    vc.progressColor = kRGBColor(255, 160, 21);
+    vc.titleColorSelected = kRGBColor(255, 160, 21);
     vc.titleSizeNormal = 18;
     vc.titleSizeSelected = 18;
     vc.progressHeight = 3;
@@ -110,6 +114,19 @@
         [arr addObject:@(i)];
     }
     return [arr copy];
+}
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    if (viewController.tabBarItem.tag == 100) {
+        LoginViewController *vc = [LoginViewController new];
+        vc.hidesBottomBarWhenPushed = YES;
+        [((UINavigationController *)tabBarController.selectedViewController) pushViewController:vc animated:YES];
+        return NO;
+    }
+    if (viewController.tabBarItem.tag == 200) {
+        
+    }
+    return YES;
 }
 
 
