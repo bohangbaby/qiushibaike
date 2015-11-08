@@ -13,7 +13,6 @@
 @interface QiuBaiListViewController ()
 
 @property (strong, nonatomic) QiuBaiViewModel *qiuBaiVM;    // ViewModel层
-@property (nonatomic) CGFloat cellHeigth;                   // cell的高度
 @property (nonatomic) QiuBaiType type;                      // 列表的类型
 @property (nonatomic) CGFloat imgHeight;                    // 图片的高度
 @property (nonatomic) CGFloat videoHeight;                  // 视频的高度
@@ -27,7 +26,6 @@
     /**
      *  注册ListTextCell
      */
-    self.cellHeigth = 0;
     self.qiuBaiVM.type = self.type;
     /**
      *  设置分割线的样式为无
@@ -121,7 +119,6 @@
     
     
     cell.content.text = [self.qiuBaiVM textContentForRow:indexPath.section];
-    self.cellHeigth = [self height:cell.content.text];
     /**
      *  内容图片
      */
@@ -152,28 +149,10 @@
     return cell;
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return UITableViewAutomaticDimension;
-//}
-
-/**
- *  动态设置每个cell的高度：图片的高度+视频的高度+文字内容的高度+评论区、头部用户信息（150）
- */
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 150 + self.imgHeight + self.cellHeigth + self.videoHeight;
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewAutomaticDimension;
 }
 
-/**
- *  用来计算cell中的文字高度
- *
- *  @param text 传入的文字内容
- *
- *  @return 文字高度
- */
-- (CGFloat)height:(NSString *)text {
-    NSDictionary *attrbute = @{NSFontAttributeName:[UIFont systemFontOfSize:18]};
-    return [text boundingRectWithSize:CGSizeMake(self.tableView.contentSize.width, 2000) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attrbute context:nil].size.height;
-}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

@@ -78,10 +78,11 @@
     vc.menuViewStyle = WMMenuViewStyleLine;
     vc.menuItemWidth = kWindowW/6.0;
     vc.progressColor = kRGBColor(255, 160, 21);
+    vc.titleColorNormal = kRGBColor(40, 40, 40);
     vc.titleColorSelected = kRGBColor(255, 160, 21);
-    vc.titleSizeNormal = 18;
-    vc.titleSizeSelected = 18;
-    vc.progressHeight = 3;
+    vc.titleSizeNormal = 14;
+    vc.titleSizeSelected = 14;
+    vc.progressHeight = 4;
     
     return vc;
 }
