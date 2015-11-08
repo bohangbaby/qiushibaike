@@ -12,9 +12,11 @@
 
 @interface QiuBaiListViewController ()
 
-@property (strong, nonatomic) QiuBaiViewModel *qiuBaiVM;
-@property (nonatomic) CGFloat cellHeigth;
-@property (nonatomic) QiuBaiType type;
+@property (strong, nonatomic) QiuBaiViewModel *qiuBaiVM;    // ViewModel层
+@property (nonatomic) CGFloat cellHeigth;                   // cell的高度
+@property (nonatomic) QiuBaiType type;                      // 列表的类型
+@property (nonatomic) CGFloat imgHeight;                    // 图片的高度
+@property (nonatomic) CGFloat videoHeight;                  // 视频的高度
 
 @end
 
@@ -107,6 +109,32 @@
     cell.nikeName.text = [self.qiuBaiVM nikeNameForRow:indexPath.section];
     cell.type.hidden = YES;
     cell.content.text = [self.qiuBaiVM textContentForRow:indexPath.section];
+    /**
+     *  内容图片
+     */
+    [cell.contentImg setImageWithURL:[self.qiuBaiVM imageContentForRow:indexPath.section] placeholderImage:[UIImage imageNamed:@"im_img_placeholder"]];
+    /**
+     *  重新布局图片的大小
+     */
+    self.imgHeight = [self.qiuBaiVM imageHeightForRow:indexPath.section];
+    [cell.contentImg mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(cell.content.mas_bottom).mas_equalTo(5);
+        make.left.mas_equalTo(10);
+        make.right.mas_equalTo(-10);
+        make.height.mas_equalTo(self.imgHeight);
+    }];
+    
+    [cell.videoImg setImageWithURL:[self.qiuBaiVM videoImageURLForRow:indexPath.section] placeholderImage:[UIImage imageNamed:@"im_img_placeholder"]];
+    /**
+     *  重新布局视频的位置
+     */
+    self.videoHeight = [self.qiuBaiVM videoImageHeightForRow:indexPath.section];
+    [cell.videoImg mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(cell.contentImg.mas_bottom).mas_equalTo(5);
+        make.left.mas_equalTo(10);
+        make.right.mas_equalTo(-10);
+        make.height.mas_equalTo(self.videoHeight);
+    }];
     self.cellHeigth = [self height:cell.content.text];
     cell.votes.text = [self.qiuBaiVM funNumberForRow:indexPath.section];
     return cell;
@@ -117,7 +145,7 @@
 //}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 150 + self.cellHeigth;
+    return 150 + self.imgHeight + self.cellHeigth + self.videoHeight;
 }
 
 - (CGFloat)height:(NSString *)text {

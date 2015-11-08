@@ -39,6 +39,20 @@
     return _content;
 }
 
+- (UIImageView *)contentImg {
+    if (_contentImg == nil) {
+        _contentImg = [UIImageView new];
+    }
+    return _contentImg;
+}
+
+- (UIImageView *)videoImg {
+    if (_videoImg == 0) {
+        _videoImg = [UIImageView new];
+    }
+    return _videoImg;
+}
+
 - (UIButton *)type {
     if (_type == nil) {
         _type = [UIButton new];
@@ -101,7 +115,8 @@
         [self.contentView addSubview:self.type];
         [self.contentView addSubview:self.votes];
         [self.contentView addSubview:self.content];
-        
+        [self.contentView addSubview:self.contentImg];
+        [self.contentView addSubview:self.videoImg];
         
         [self.icon mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.top.mas_equalTo(10);
@@ -122,8 +137,20 @@
             make.top.mas_equalTo(_icon.mas_bottom).mas_equalTo(10);
             make.right.mas_equalTo(-10);
         }];
+        [self.contentImg mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(_content.mas_bottom).mas_equalTo(5);
+            make.left.mas_equalTo(10);
+            make.right.mas_equalTo(-10);
+            make.height.mas_equalTo(0);
+        }];
+        [self.videoImg mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(_contentImg.mas_bottom).mas_equalTo(5);
+            make.left.mas_equalTo(10);
+            make.right.mas_equalTo(-10);
+            make.height.mas_equalTo(0);
+        }];
         [self.votes mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.content.mas_bottom).mas_equalTo(10);
+            make.top.mas_equalTo(self.videoImg.mas_bottom).mas_equalTo(10);
             make.left.mas_equalTo(10);
             make.height.mas_equalTo(20);
             make.width.mas_equalTo(200);

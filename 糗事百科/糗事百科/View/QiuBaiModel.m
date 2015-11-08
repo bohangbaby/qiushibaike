@@ -24,6 +24,10 @@
 
 @end
 
+@implementation ItemsImageSizeModel
+
+
+@end
 
 @implementation ItemsVotesModel
 

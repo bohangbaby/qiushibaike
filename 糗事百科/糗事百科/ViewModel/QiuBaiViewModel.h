@@ -45,6 +45,10 @@
  */
 - (NSURL *)imageContentForRow:(NSInteger)row;
 /**
+ *  图片的高度
+ */
+- (CGFloat)imageHeightForRow:(NSInteger)row;
+/**
  *  视频内容地址
  */
 - (NSURL *)videoURLForRow:(NSInteger)row;
@@ -52,6 +56,11 @@
  *  视频对应的图片
  */
 - (NSURL *)videoImageURLForRow:(NSInteger)row;
+
+/**
+ *  视频对应的图片高度
+ */
+- (CGFloat)videoImageHeightForRow:(NSInteger)row;
 
 /**
  *  好笑和评论的人数

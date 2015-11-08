@@ -75,8 +75,29 @@
  *  图片内容
  */
 - (NSURL *)imageContentForRow:(NSInteger)row {
-    return [NSURL URLWithString:[self itemsModelForRow:row].image];
+    // http://pic.qiushibaike.com/system/pictures/11370/113702548/medium/app113702548.jpg
+    NSString *path = @"http://pic.qiushibaike.com/system/pictures/";
+    NSString *createId = [NSString stringWithFormat:@"%ld",[self itemsModelForRow:row].ID];
+    NSString *iconStr = @"";
+    if (![createId isEqualToString:@"0"]) {
+        NSString *leadId = [createId substringWithRange:NSMakeRange(0, 5)];
+        iconStr = [NSString stringWithFormat:@"%@/%@/%@/medium/%@",path,leadId,createId,[self itemsModelForRow:row].image];
+    }
+    NSLog(@"图片地址:%@",iconStr);
+    return [NSURL URLWithString:iconStr];
 }
+/**
+ *  图片的高度
+ */
+- (CGFloat)imageHeightForRow:(NSInteger)row {
+    NSArray *m = [self itemsModelForRow:row].image_size.m;
+    if (m.count == 0) {
+        return 0;
+    }
+    CGFloat height = ((NSInteger)m[0]/(NSInteger)m[1])*kWindowW;
+    return height;
+}
+
 /**
  *  视频内容地址
  */
@@ -89,6 +110,18 @@
  */
 - (NSURL *)videoImageURLForRow:(NSInteger)row {
     return [NSURL URLWithString:[self itemsModelForRow:row].pic_url];
+}
+
+/**
+ *  视频对应的图片高度
+ */
+- (CGFloat)videoImageHeightForRow:(NSInteger)row {
+    NSArray *videoImg = [self itemsModelForRow:row].pic_size;
+    if (videoImg.count == 0) {
+        return 0;
+    }
+    CGFloat height = ((NSInteger)videoImg[0]/(NSInteger)videoImg[1])*kWindowW;
+    return height;
 }
 /**
  *  好笑和评论的人数

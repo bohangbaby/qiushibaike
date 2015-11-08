@@ -8,7 +8,7 @@
 
 #import "BaseModel.h"
 
-@class QiuBaiItemsModel,ItemsVotesModel,ItemsUserModel;
+@class QiuBaiItemsModel,ItemsVotesModel,ItemsUserModel,ItemsImageSizeModel;
 @interface QiuBaiModel : BaseModel
 
 
@@ -50,7 +50,7 @@
 
 @property (nonatomic, copy) NSString *pic_url;
 
-@property (nonatomic, copy) NSString *image_size;
+@property (nonatomic, strong) ItemsImageSizeModel *image_size;
 
 @property (nonatomic, copy) NSString *image;
 
@@ -67,6 +67,14 @@
 @property (nonatomic, strong) ItemsVotesModel *votes;
 
 @end
+
+@interface ItemsImageSizeModel : NSObject
+
+@property (strong, nonatomic) NSArray *m;
+@property (strong, nonatomic) NSArray *s;
+
+@end
+
 
 @interface ItemsVotesModel : NSObject
 

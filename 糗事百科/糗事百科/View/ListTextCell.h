@@ -18,6 +18,10 @@
 @property (strong, nonatomic) UIButton *type;
 /** 糗事文字内容 */
 @property (strong, nonatomic) UILabel *content;
+/** 糗事图片内容 */
+@property (strong, nonatomic) UIImageView *contentImg;
+/** 糗事视频内容 */
+@property (strong, nonatomic) UIImageView *videoImg;
 /** 好笑、评论数 */
 @property (strong, nonatomic) UILabel *votes;
 /** 点赞按钮 */
