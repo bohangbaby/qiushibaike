@@ -87,6 +87,7 @@
     if (_playVideo == nil) {
         _playVideo = [UIButton new];
         [_playVideo setImage:[UIImage imageNamed:@"multimedia_videocard_play"] forState:UIControlStateNormal];
+        [_playVideo addTarget:self action:@selector(playButton) forControlEvents:UIControlEventTouchUpInside];
     }
     return _playVideo;
 }
@@ -266,6 +267,38 @@
     }
     
     return self;
+}
+
+
+#pragma mark - 视频播放
+//为了保证同一时间只有一个播放器，使用单例模式
++ (AVPlayerViewController *)sharedInstance{
+    static AVPlayerViewController *vc = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        vc = [AVPlayerViewController new];
+    });
+    return vc;
+}
+
+//按钮点击
+- (void)playButton {
+    AVPlayer *player=[AVPlayer playerWithURL:self.videoURL];
+    [player play];
+    [ListTextCell sharedInstance].player = player;
+    [self.playVideo addSubview:[ListTextCell sharedInstance].view];
+    [[ListTextCell sharedInstance].view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(0);
+    }];
+}
+//如果cell被复用了，需要把cell上的播放器删掉
+- (void)prepareForReuse{
+    [super prepareForReuse];
+    //判断当前cell是否有播放，如果有则删除-->自己想办法
+    if ([ListTextCell sharedInstance].view.superview == self.playVideo) {
+        [[ListTextCell sharedInstance].view removeFromSuperview];
+        [ListTextCell sharedInstance].player = nil;
+    }
 }
 
 

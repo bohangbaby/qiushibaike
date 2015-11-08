@@ -33,7 +33,8 @@
 @property (strong, nonatomic) UIImageView *videoImg;
 /** 视频点击按钮 */
 @property (strong, nonatomic) UIButton *playVideo;
-
+/** 视频地址 */
+@property (strong, nonatomic) NSURL *videoURL;
 
 /** 底部 */
 
