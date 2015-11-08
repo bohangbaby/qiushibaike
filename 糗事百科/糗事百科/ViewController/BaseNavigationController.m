@@ -18,6 +18,7 @@
     [super viewDidLoad];
     self.navigationBar.translucent = NO;
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    dic[NSForegroundColorAttributeName] = kRGBColor(40, 40, 40);
     dic[NSFontAttributeName] = [UIFont boldSystemFontOfSize:18];
     
     self.navigationBar.titleTextAttributes = dic;

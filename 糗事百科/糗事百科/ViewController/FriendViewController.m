@@ -17,7 +17,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor blueColor];
+    self.title = @"糗友圈";
+    
+    UIButton *leftButton = [UIButton new];
+    [leftButton setImage:[UIImage imageNamed:@"qbf_foot"] forState:UIControlStateNormal];
+    [leftButton setTitleColor:kRGBColor(255, 160, 21) forState:UIControlStateNormal];
+    [leftButton setTitle:@"签到" forState:UIControlStateNormal];
+    leftButton.titleLabel.font = [UIFont systemFontOfSize:14];
+    leftButton.imageEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0);
+    leftButton.titleEdgeInsets = UIEdgeInsetsMake(0, -25, 0, 0);
+    leftButton.frame = CGRectMake(0, 0, 70, 50);
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
+    
+    UIButton *rightButton = [UIButton new];
+    [rightButton setImage:[UIImage imageNamed:@"icon_post_new"] forState:UIControlStateNormal];
+    rightButton.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -20);
+    rightButton.frame = CGRectMake(0, 0, 40, 50);
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
