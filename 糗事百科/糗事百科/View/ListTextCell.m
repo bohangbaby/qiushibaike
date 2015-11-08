@@ -159,9 +159,9 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         
         // 头部
-        [self.userInfo addSubview:self.icon];
-        [self.userInfo addSubview:self.nikeName];
-        [self.userInfo addSubview:self.type];
+        [self.contentView addSubview:self.icon];
+        [self.contentView addSubview:self.nikeName];
+        [self.contentView addSubview:self.type];
         [self.contentView addSubview:self.userInfo];
         
         // 中部
@@ -182,7 +182,7 @@
          *  头部控件的布局
          */
         [self.icon mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.top.mas_equalTo(0);
+            make.left.top.mas_equalTo(10);
             make.size.mas_equalTo(CGSizeMake(40, 40));
         }];
         [self.nikeName mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -193,7 +193,7 @@
         [self.type mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.mas_equalTo(-10);
             make.size.mas_equalTo(CGSizeMake(60, 40));
-            make.top.mas_equalTo(0);
+            make.top.mas_equalTo(10);
         }];
         [self.userInfo mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.top.mas_equalTo(10);
