@@ -101,7 +101,11 @@
     if (m.count == 0) {
         return 0;
     }
-    CGFloat height = ((NSInteger)m[0]/(NSInteger)m[1])*kWindowW;
+    NSString *w = m[1];
+    NSString *h = m[0];
+    NSInteger ww = w.integerValue;
+    NSInteger hh = h.integerValue;
+    CGFloat height = ww*1.0/hh * kWindowW;
     return height;
 }
 
@@ -127,7 +131,11 @@
     if (videoImg.count == 0) {
         return 0;
     }
-    CGFloat height = ((NSInteger)videoImg[0]/(NSInteger)videoImg[1])*kWindowW;
+    NSString *w = videoImg[1];
+    NSString *h = videoImg[0];
+    NSInteger ww = w.integerValue;
+    NSInteger hh = h.integerValue;
+    CGFloat height = ww*1.0/hh * kWindowW;
     return height;
 }
 /**
