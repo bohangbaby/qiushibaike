@@ -13,6 +13,8 @@
 @implementation QiuBaiNearbyViewModel
 #pragma mark - 懒加载
 
+
+
 /** 用户头像 */
 - (NSURL *)iconURLForRow:(NSInteger)row {
     return  [NSURL URLWithString:[self userModelForRow:row].icon];
@@ -127,11 +129,14 @@
             [self.dataArr removeAllObjects];
         }
         [self.dataArr addObjectsFromArray:model.data];
+        self.rowNumber = self.dataArr.count;
     }];
 }
 
 - (void)refreshDataComletionHandle:(void (^)(NSError *))completionHandle {
     self.page = 1;
+    self.latitude = 1;
+    self.longitude = 1;
     [self getDataComletionHandle:completionHandle];
 }
 

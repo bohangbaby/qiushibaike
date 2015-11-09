@@ -16,6 +16,7 @@
 #import "QiuBaiListViewController.h"
 #import "LoginViewController.h"
 #import "WMPageController.h"
+#import "NearbyViewController.h"
 
 
 @interface BaseTabBarController ()<UITabBarControllerDelegate>
@@ -32,7 +33,8 @@
     mainVC.tabBarItem.tag = 200;
     [self setChildVC:mainVC andTitle:@"糗事" andNormalImage:@"icon_main" andSelectedImage:@"icon_main_active"];
     /** 糗友圈控制器 */
-    FriendViewController *friendVC = [[FriendViewController alloc] init];
+    NearbyViewController *friendVC = [NearbyViewController new];
+//    FriendViewController *friendVC = [[FriendViewController alloc] init];
     [self setChildVC:friendVC andTitle:@"糗友圈" andNormalImage:@"main_tab_qbfriends" andSelectedImage:@"main_tab_qbfriends_active"];
     /** 发现控制器 */
     DiscoverViewController *discoverVC = [[DiscoverViewController alloc] init];

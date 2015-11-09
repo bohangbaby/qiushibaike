@@ -10,6 +10,7 @@
 		220371781BF02C4200B8E6FE /* QiuBaiNearByModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 220371771BF02C4200B8E6FE /* QiuBaiNearByModel.m */; };
 		2203717B1BF0310D00B8E6FE /* QiuBaiNearbyViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2203717A1BF0310D00B8E6FE /* QiuBaiNearbyViewModel.m */; };
 		2203717E1BF039E600B8E6FE /* BaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2203717D1BF039E600B8E6FE /* BaseViewModel.m */; };
+		220371A41BF0764F00B8E6FE /* NearbyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 220371A31BF0764F00B8E6FE /* NearbyCell.m */; };
 		220B907E1BED850C0028E2D4 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B907D1BED850C0028E2D4 /* BaseModel.m */; };
 		220B90811BED859C0028E2D4 /* QiuBaiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B90801BED859C0028E2D4 /* QiuBaiModel.m */; };
 		220B90841BED86D80028E2D4 /* QiuBaiViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B90831BED86D80028E2D4 /* QiuBaiViewModel.m */; };
@@ -18,6 +19,7 @@
 		220B90941BEDA0590028E2D4 /* QiuBaiListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B90931BEDA0590028E2D4 /* QiuBaiListViewController.m */; };
 		220B90971BEDA0C70028E2D4 /* ListTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B90961BEDA0C70028E2D4 /* ListTextCell.m */; };
 		220B909A1BEDA45C0028E2D4 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B90991BEDA45C0028E2D4 /* UIView+Extension.m */; };
+		221D3CC31BF09966001E9F3D /* NearbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 221D3CC21BF09966001E9F3D /* NearbyViewController.m */; };
 		226CEC481BECD0030061A5D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CEC471BECD0030061A5D8 /* main.m */; };
 		226CEC4B1BECD0030061A5D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CEC4A1BECD0030061A5D8 /* AppDelegate.m */; };
 		226CEC721BECD3620061A5D8 /* WMFooldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CEC681BECD3620061A5D8 /* WMFooldView.m */; };
@@ -53,6 +55,8 @@
 		2203717A1BF0310D00B8E6FE /* QiuBaiNearbyViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QiuBaiNearbyViewModel.m; sourceTree = "<group>"; };
 		2203717C1BF039E600B8E6FE /* BaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewModel.h; sourceTree = "<group>"; };
 		2203717D1BF039E600B8E6FE /* BaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewModel.m; sourceTree = "<group>"; };
+		220371A21BF0764F00B8E6FE /* NearbyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyCell.h; sourceTree = "<group>"; };
+		220371A31BF0764F00B8E6FE /* NearbyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyCell.m; sourceTree = "<group>"; };
 		220B907C1BED850C0028E2D4 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseModel.h; path = ../View/BaseModel.h; sourceTree = "<group>"; };
 		220B907D1BED850C0028E2D4 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseModel.m; path = ../View/BaseModel.m; sourceTree = "<group>"; };
 		220B907F1BED859C0028E2D4 /* QiuBaiModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QiuBaiModel.h; path = ../View/QiuBaiModel.h; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 		220B90961BEDA0C70028E2D4 /* ListTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTextCell.m; sourceTree = "<group>"; };
 		220B90981BEDA45C0028E2D4 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		220B90991BEDA45C0028E2D4 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		221D3CC11BF09966001E9F3D /* NearbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyViewController.h; sourceTree = "<group>"; };
+		221D3CC21BF09966001E9F3D /* NearbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyViewController.m; sourceTree = "<group>"; };
 		226CEC431BECD0030061A5D8 /* 糗事百科.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "糗事百科.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		226CEC471BECD0030061A5D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		226CEC491BECD0030061A5D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -293,6 +299,8 @@
 			children = (
 				220B90951BEDA0C70028E2D4 /* ListTextCell.h */,
 				220B90961BEDA0C70028E2D4 /* ListTextCell.m */,
+				220371A21BF0764F00B8E6FE /* NearbyCell.h */,
+				220371A31BF0764F00B8E6FE /* NearbyCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -316,6 +324,8 @@
 				E067544D1BECF3040021F3B1 /* MeViewController.m */,
 				220B90921BEDA0590028E2D4 /* QiuBaiListViewController.h */,
 				220B90931BEDA0590028E2D4 /* QiuBaiListViewController.m */,
+				221D3CC11BF09966001E9F3D /* NearbyViewController.h */,
+				221D3CC21BF09966001E9F3D /* NearbyViewController.m */,
 				E0B72AE21BEE161B00FC37C7 /* LoginViewController.h */,
 				E0B72AE31BEE161B00FC37C7 /* LoginViewController.m */,
 				E0B72AE51BEE444600FC37C7 /* SettingViewController.h */,
@@ -468,7 +478,9 @@
 				220371781BF02C4200B8E6FE /* QiuBaiNearByModel.m in Sources */,
 				2203717B1BF0310D00B8E6FE /* QiuBaiNearbyViewModel.m in Sources */,
 				E0B72AEA1BEE528400FC37C7 /* UIButtonSubView.m in Sources */,
+				220371A41BF0764F00B8E6FE /* NearbyCell.m in Sources */,
 				E067544B1BECF2EA0021F3B1 /* ChatViewController.m in Sources */,
+				221D3CC31BF09966001E9F3D /* NearbyViewController.m in Sources */,
 				E06754421BECF1E90021F3B1 /* BaseTabBarController.m in Sources */,
 				220B907E1BED850C0028E2D4 /* BaseModel.m in Sources */,
 				E067544E1BECF3040021F3B1 /* MeViewController.m in Sources */,
@@ -605,8 +617,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "糗事百科/Resoure/PrefixHeader.pch";
 				INFOPLIST_FILE = "糗事百科/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hzq.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -621,8 +635,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "糗事百科/Resoure/PrefixHeader.pch";
 				INFOPLIST_FILE = "糗事百科/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hzq.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
