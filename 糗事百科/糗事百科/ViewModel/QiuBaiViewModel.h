@@ -6,24 +6,13 @@
 //  Copyright © 2015年 hzq. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "BaseViewModel.h"
 #import "QiuBaiModel.h"
 #import "QiuBaiNetworkManager.h"
 
-@interface QiuBaiViewModel : NSObject
+@interface QiuBaiViewModel : BaseViewModel
 
-/**
- *  行数
- */
-@property (nonatomic) NSInteger rowNumber;
-/**
- *  存储当前数据
- */
-@property (strong, nonatomic) NSMutableArray *dataArr;
-/**
- *  当前页数
- */
-@property (nonatomic) NSInteger page;
+
 /**
  *  当前的选中的类型：视频、专享、最新、精华、纯文、纯图
  */
@@ -71,11 +60,5 @@
  */
 - (NSString *)funNumberForRow:(NSInteger)row;
 
-/**
- *  获取数据
- */
-
-- (void)refreshDataComletionHandle:(void(^)(NSError *error))completionHandle;
-- (void)getMoreDataComletionHandle:(void(^)(NSError *error))completionHandle;
 
 @end

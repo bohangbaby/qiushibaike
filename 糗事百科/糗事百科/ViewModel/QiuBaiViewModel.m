@@ -10,16 +10,7 @@
 
 @implementation QiuBaiViewModel
 #pragma mark - 懒加载
-- (NSInteger)rowNumber {
-    return self.dataArr.count;
-}
 
-- (NSMutableArray *)dataArr {
-    if (_dataArr == nil) {
-        _dataArr = [NSMutableArray array];
-    }
-    return _dataArr;
-}
 
 /**
  *  获取糗事模型
@@ -181,9 +172,9 @@
  */
 
 - (void)getDataComletionHandle:(void(^)(NSError *error))completionHandle {
-    [QiuBaiNetworkManager getQiuBaiModelWithType:self.type andPage:_page completionHandle:^(QiuBaiModel *model, NSError *error) {
+    [QiuBaiNetworkManager getQiuBaiModelWithType:self.type andPage:self.page completionHandle:^(QiuBaiModel *model, NSError *error) {
         completionHandle(error);
-        if (_page == 1) {
+        if (self.page == 1) {
             [self.dataArr removeAllObjects];
         }
         [self.dataArr addObjectsFromArray:model.items];
@@ -191,12 +182,12 @@
 }
 
 - (void)refreshDataComletionHandle:(void(^)(NSError *error))completionHandle {
-    _page = 1;
+    self.page = 1;
     [self getDataComletionHandle:completionHandle];
     
 }
 - (void)getMoreDataComletionHandle:(void(^)(NSError *error))completionHandle {
-    _page++;
+    self.page++;
     [self getDataComletionHandle:completionHandle];
 }
 

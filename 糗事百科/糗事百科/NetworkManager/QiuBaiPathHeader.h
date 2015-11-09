@@ -26,6 +26,9 @@
 /** 精华地址 */
 #define kDayPath @"http://m2.qiushibaike.com/article/list/day?"
 
+/** 隔壁 */
+#define kNearbyPath @"http://circle.qiushibaike.com/article/nearby/list?"
+
 
 #endif /* QiuBaiPathHeader_h */
 

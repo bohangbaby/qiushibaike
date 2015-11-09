@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		220371781BF02C4200B8E6FE /* QiuBaiNearByModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 220371771BF02C4200B8E6FE /* QiuBaiNearByModel.m */; };
+		2203717B1BF0310D00B8E6FE /* QiuBaiNearbyViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2203717A1BF0310D00B8E6FE /* QiuBaiNearbyViewModel.m */; };
+		2203717E1BF039E600B8E6FE /* BaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2203717D1BF039E600B8E6FE /* BaseViewModel.m */; };
 		220B907E1BED850C0028E2D4 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B907D1BED850C0028E2D4 /* BaseModel.m */; };
 		220B90811BED859C0028E2D4 /* QiuBaiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B90801BED859C0028E2D4 /* QiuBaiModel.m */; };
 		220B90841BED86D80028E2D4 /* QiuBaiViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B90831BED86D80028E2D4 /* QiuBaiViewModel.m */; };
@@ -44,6 +47,12 @@
 /* Begin PBXFileReference section */
 		03DC7845322B1F06E9C84BB7 /* Pods-糗事百科.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-糗事百科.release.xcconfig"; path = "Pods/Target Support Files/Pods-糗事百科/Pods-糗事百科.release.xcconfig"; sourceTree = "<group>"; };
 		0F93C2EBE22FA14F6E2C7F37 /* Pods-糗事百科.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-糗事百科.debug.xcconfig"; path = "Pods/Target Support Files/Pods-糗事百科/Pods-糗事百科.debug.xcconfig"; sourceTree = "<group>"; };
+		220371761BF02C4200B8E6FE /* QiuBaiNearByModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QiuBaiNearByModel.h; sourceTree = "<group>"; };
+		220371771BF02C4200B8E6FE /* QiuBaiNearByModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QiuBaiNearByModel.m; sourceTree = "<group>"; };
+		220371791BF0310D00B8E6FE /* QiuBaiNearbyViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QiuBaiNearbyViewModel.h; sourceTree = "<group>"; };
+		2203717A1BF0310D00B8E6FE /* QiuBaiNearbyViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QiuBaiNearbyViewModel.m; sourceTree = "<group>"; };
+		2203717C1BF039E600B8E6FE /* BaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewModel.h; sourceTree = "<group>"; };
+		2203717D1BF039E600B8E6FE /* BaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewModel.m; sourceTree = "<group>"; };
 		220B907C1BED850C0028E2D4 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseModel.h; path = ../View/BaseModel.h; sourceTree = "<group>"; };
 		220B907D1BED850C0028E2D4 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseModel.m; path = ../View/BaseModel.m; sourceTree = "<group>"; };
 		220B907F1BED859C0028E2D4 /* QiuBaiModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QiuBaiModel.h; path = ../View/QiuBaiModel.h; sourceTree = "<group>"; };
@@ -261,6 +270,8 @@
 				220B907D1BED850C0028E2D4 /* BaseModel.m */,
 				220B907F1BED859C0028E2D4 /* QiuBaiModel.h */,
 				220B90801BED859C0028E2D4 /* QiuBaiModel.m */,
+				220371761BF02C4200B8E6FE /* QiuBaiNearByModel.h */,
+				220371771BF02C4200B8E6FE /* QiuBaiNearByModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -316,8 +327,12 @@
 		E06754391BECF08E0021F3B1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2203717C1BF039E600B8E6FE /* BaseViewModel.h */,
+				2203717D1BF039E600B8E6FE /* BaseViewModel.m */,
 				220B90821BED86D80028E2D4 /* QiuBaiViewModel.h */,
 				220B90831BED86D80028E2D4 /* QiuBaiViewModel.m */,
+				220371791BF0310D00B8E6FE /* QiuBaiNearbyViewModel.h */,
+				2203717A1BF0310D00B8E6FE /* QiuBaiNearbyViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -450,6 +465,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				220B90941BEDA0590028E2D4 /* QiuBaiListViewController.m in Sources */,
+				220371781BF02C4200B8E6FE /* QiuBaiNearByModel.m in Sources */,
+				2203717B1BF0310D00B8E6FE /* QiuBaiNearbyViewModel.m in Sources */,
 				E0B72AEA1BEE528400FC37C7 /* UIButtonSubView.m in Sources */,
 				E067544B1BECF2EA0021F3B1 /* ChatViewController.m in Sources */,
 				E06754421BECF1E90021F3B1 /* BaseTabBarController.m in Sources */,
@@ -458,6 +475,7 @@
 				E06754481BECF2C00021F3B1 /* DiscoverViewController.m in Sources */,
 				220B90901BED89A60028E2D4 /* QiuBaiNetworkManager.m in Sources */,
 				226CEC721BECD3620061A5D8 /* WMFooldView.m in Sources */,
+				2203717E1BF039E600B8E6FE /* BaseViewModel.m in Sources */,
 				E0B72AE41BEE161B00FC37C7 /* LoginViewController.m in Sources */,
 				220B90811BED859C0028E2D4 /* QiuBaiModel.m in Sources */,
 				220B90841BED86D80028E2D4 /* QiuBaiViewModel.m in Sources */,

@@ -73,4 +73,17 @@
     return prama;
 }
 
+
++ (void)getNearbyModelWithPage:(NSInteger)page latitude:(NSInteger)latitude longitude:(NSInteger)longitude completionHandle:(void(^)(QiuBaiNearByModel *model,NSError *error))completionHandle {
+    NSString *path = kNearbyPath;
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setValue:@(page) forKey:@"page"];
+    [params setValue:@(latitude) forKey:@"latitude"];
+    [params setValue:@(longitude) forKey:@"longitude"];
+    
+    [self GET:path parameters:params completionHandler:^(id responseObj, NSError *error) {
+        completionHandle([QiuBaiNearByModel objectWithKeyValues:responseObj],error);
+    }];
+}
+
 @end
