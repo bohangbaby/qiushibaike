@@ -55,6 +55,7 @@
 - (UILabel *)contentText {
     if (_contentText == nil) {
         _contentText = [UILabel new];
+        _contentText.numberOfLines = 0;
     }
     return _contentText;
 }
@@ -170,7 +171,7 @@
         }];
         
         [self.contentText mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(0);
+            make.top.mas_equalTo(60);
             make.leftMargin.mas_equalTo(_nikeName.mas_leftMargin);
             make.right.mas_equalTo(-10);
             make.bottom.mas_equalTo(_allImageView.mas_top).mas_equalTo(-5);
@@ -182,7 +183,7 @@
         }];
         [self.optionA mas_makeConstraints:^(MASConstraintMaker *make) {
             make.leftMargin.mas_equalTo(_nikeName.mas_leftMargin);
-            make.height.mas_equalTo(30);
+            make.height.mas_equalTo(0);
             make.top.mas_equalTo(_allImageView.mas_bottom).mas_equalTo(5);
         }];
         [self.vsImageView mas_makeConstraints:^(MASConstraintMaker *make) {
