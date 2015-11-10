@@ -13,6 +13,7 @@
 @interface QiuBaiViewModel : BaseViewModel
 
 
+
 /**
  *  当前的选中的类型：视频、专享、最新、精华、纯文、纯图
  */
@@ -60,5 +61,13 @@
  */
 - (NSString *)funNumberForRow:(NSInteger)row;
 
+
+
+/**
+ *  获取数据
+ */
+
+- (void)refreshDataComletionHandle:(void(^)(NSError *error))completionHandle;
+- (void)getMoreDataComletionHandle:(void(^)(NSError *error))completionHandle;
 
 @end

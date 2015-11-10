@@ -23,8 +23,8 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     switch (type) {
         case QiuBaiTypeVIP: {
-            path = kVIPPath;
-            params = [[self pramaWithCount:30 page:page readarticles:nil AdID:nil] copy];
+            path = kDayPath;
+            params = [[self pramaWithCount:30 page:page readarticles:@"%5B113670457%2C113659336%5D" AdID:@"1446810629497802FEE4DD"] copy];
             break;
         }
         case QiuBaiTypeVideo: {
@@ -70,6 +70,17 @@
     [prama setValue:@(page) forKey:@"page"];
     [prama setValue:readarticles forKey:@"readarticles"];
     [prama setValue:AdID forKey:@"AdID"];
+    return prama;
+}
+// 专享
++ (NSDictionary *)pramaVIPWithPage:(NSInteger)page {
+    NSMutableDictionary *prama = [NSMutableDictionary dictionary];
+    [prama setValue:@(30) forKey:@"count"];
+    [prama setValue:@(page) forKey:@"page"];
+    [prama setValue:@"%5B113725323%2C113723946%2C113733864%2C113734784%5D" forKey:@"readarticles"];
+    [prama setValue:@"refresh" forKey:@"type"];
+    [prama setValue:@"113.2495236575455" forKey:@"longitude"];
+    [prama setValue:@"14471535263299FE25" forKey:@"AdID"];
     return prama;
 }
 

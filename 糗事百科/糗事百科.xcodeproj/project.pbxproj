@@ -16,10 +16,18 @@
 		220B90841BED86D80028E2D4 /* QiuBaiViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B90831BED86D80028E2D4 /* QiuBaiViewModel.m */; };
 		220B908A1BED88510028E2D4 /* BaseNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B90891BED88510028E2D4 /* BaseNetworkManager.m */; };
 		220B90901BED89A60028E2D4 /* QiuBaiNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B908F1BED89A60028E2D4 /* QiuBaiNetworkManager.m */; };
-		220B90941BEDA0590028E2D4 /* QiuBaiListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B90931BEDA0590028E2D4 /* QiuBaiListViewController.m */; };
 		220B90971BEDA0C70028E2D4 /* ListTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B90961BEDA0C70028E2D4 /* ListTextCell.m */; };
 		220B909A1BEDA45C0028E2D4 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B90991BEDA45C0028E2D4 /* UIView+Extension.m */; };
-		221D3CC31BF09966001E9F3D /* NearbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 221D3CC21BF09966001E9F3D /* NearbyViewController.m */; };
+		22682DF51BF1A2E5005DAFD1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22682DF41BF1A2E5005DAFD1 /* LoginViewController.m */; };
+		22682DFA1BF1A330005DAFD1 /* FriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22682DF71BF1A330005DAFD1 /* FriendViewController.m */; };
+		22682DFB1BF1A330005DAFD1 /* NearbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22682DF91BF1A330005DAFD1 /* NearbyViewController.m */; };
+		22682DFE1BF1A33D005DAFD1 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22682DFD1BF1A33D005DAFD1 /* DiscoverViewController.m */; };
+		22682E031BF1A3A8005DAFD1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22682E001BF1A3A8005DAFD1 /* MainViewController.m */; };
+		22682E041BF1A3A8005DAFD1 /* QiuBaiListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22682E021BF1A3A8005DAFD1 /* QiuBaiListViewController.m */; };
+		22682E0A1BF1C133005DAFD1 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22682E071BF1C133005DAFD1 /* MeViewController.m */; };
+		22682E0B1BF1C133005DAFD1 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22682E091BF1C133005DAFD1 /* SettingViewController.m */; };
+		22682E0F1BF1C160005DAFD1 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22682E0E1BF1C160005DAFD1 /* ChatViewController.m */; };
+		22682E121BF1E132005DAFD1 /* LoginNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22682E111BF1E132005DAFD1 /* LoginNaviViewController.m */; };
 		226CEC481BECD0030061A5D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CEC471BECD0030061A5D8 /* main.m */; };
 		226CEC4B1BECD0030061A5D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CEC4A1BECD0030061A5D8 /* AppDelegate.m */; };
 		226CEC721BECD3620061A5D8 /* WMFooldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 226CEC681BECD3620061A5D8 /* WMFooldView.m */; };
@@ -31,15 +39,8 @@
 		E067541E1BECE3A20021F3B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E06754181BECE3A20021F3B1 /* Assets.xcassets */; };
 		E06754251BECE3C40021F3B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E06754211BECE3C40021F3B1 /* LaunchScreen.storyboard */; };
 		E06754261BECE3C40021F3B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E06754231BECE3C40021F3B1 /* Main.storyboard */; };
-		E067543F1BECF1CC0021F3B1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E067543E1BECF1CC0021F3B1 /* MainViewController.m */; };
 		E06754421BECF1E90021F3B1 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06754411BECF1E90021F3B1 /* BaseTabBarController.m */; };
-		E06754451BECF2A40021F3B1 /* FriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06754441BECF2A40021F3B1 /* FriendViewController.m */; };
-		E06754481BECF2C00021F3B1 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06754471BECF2C00021F3B1 /* DiscoverViewController.m */; };
-		E067544B1BECF2EA0021F3B1 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E067544A1BECF2EA0021F3B1 /* ChatViewController.m */; };
-		E067544E1BECF3040021F3B1 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E067544D1BECF3040021F3B1 /* MeViewController.m */; };
 		E06754531BECFD240021F3B1 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06754521BECFD240021F3B1 /* BaseNavigationController.m */; };
-		E0B72AE41BEE161B00FC37C7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B72AE31BEE161B00FC37C7 /* LoginViewController.m */; };
-		E0B72AE71BEE444600FC37C7 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B72AE61BEE444600FC37C7 /* SettingViewController.m */; };
 		E0B72AEA1BEE528400FC37C7 /* UIButtonSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B72AE91BEE528400FC37C7 /* UIButtonSubView.m */; };
 		E0C2E4061BEF5A2C00A78278 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0C2E4051BEF5A2C00A78278 /* AVFoundation.framework */; };
 		E0C2E4081BEF5A3400A78278 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0C2E4071BEF5A3400A78278 /* AVKit.framework */; };
@@ -68,14 +69,30 @@
 		220B908E1BED89A60028E2D4 /* QiuBaiNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QiuBaiNetworkManager.h; sourceTree = "<group>"; };
 		220B908F1BED89A60028E2D4 /* QiuBaiNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QiuBaiNetworkManager.m; sourceTree = "<group>"; };
 		220B90911BED8C8A0028E2D4 /* QiuBaiPathHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QiuBaiPathHeader.h; sourceTree = "<group>"; };
-		220B90921BEDA0590028E2D4 /* QiuBaiListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QiuBaiListViewController.h; sourceTree = "<group>"; };
-		220B90931BEDA0590028E2D4 /* QiuBaiListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QiuBaiListViewController.m; sourceTree = "<group>"; };
 		220B90951BEDA0C70028E2D4 /* ListTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTextCell.h; sourceTree = "<group>"; };
 		220B90961BEDA0C70028E2D4 /* ListTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTextCell.m; sourceTree = "<group>"; };
 		220B90981BEDA45C0028E2D4 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		220B90991BEDA45C0028E2D4 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
-		221D3CC11BF09966001E9F3D /* NearbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyViewController.h; sourceTree = "<group>"; };
-		221D3CC21BF09966001E9F3D /* NearbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyViewController.m; sourceTree = "<group>"; };
+		22682DF31BF1A2E5005DAFD1 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		22682DF41BF1A2E5005DAFD1 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		22682DF61BF1A330005DAFD1 /* FriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendViewController.h; sourceTree = "<group>"; };
+		22682DF71BF1A330005DAFD1 /* FriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendViewController.m; sourceTree = "<group>"; };
+		22682DF81BF1A330005DAFD1 /* NearbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyViewController.h; sourceTree = "<group>"; };
+		22682DF91BF1A330005DAFD1 /* NearbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyViewController.m; sourceTree = "<group>"; };
+		22682DFC1BF1A33D005DAFD1 /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
+		22682DFD1BF1A33D005DAFD1 /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
+		22682DFF1BF1A3A8005DAFD1 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		22682E001BF1A3A8005DAFD1 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		22682E011BF1A3A8005DAFD1 /* QiuBaiListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QiuBaiListViewController.h; sourceTree = "<group>"; };
+		22682E021BF1A3A8005DAFD1 /* QiuBaiListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QiuBaiListViewController.m; sourceTree = "<group>"; };
+		22682E061BF1C133005DAFD1 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
+		22682E071BF1C133005DAFD1 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
+		22682E081BF1C133005DAFD1 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		22682E091BF1C133005DAFD1 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		22682E0D1BF1C160005DAFD1 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		22682E0E1BF1C160005DAFD1 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		22682E101BF1E132005DAFD1 /* LoginNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginNaviViewController.h; sourceTree = "<group>"; };
+		22682E111BF1E132005DAFD1 /* LoginNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginNaviViewController.m; sourceTree = "<group>"; };
 		226CEC431BECD0030061A5D8 /* 糗事百科.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "糗事百科.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		226CEC471BECD0030061A5D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		226CEC491BECD0030061A5D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -98,26 +115,12 @@
 		E06754181BECE3A20021F3B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "糗事百科/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
 		E06754221BECE3C40021F3B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "糗事百科/Base.lproj/LaunchScreen.storyboard"; sourceTree = SOURCE_ROOT; };
 		E06754241BECE3C40021F3B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "糗事百科/Base.lproj/Main.storyboard"; sourceTree = SOURCE_ROOT; };
-		E067543D1BECF1CC0021F3B1 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		E067543E1BECF1CC0021F3B1 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		E06754401BECF1E90021F3B1 /* BaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabBarController.h; sourceTree = "<group>"; };
 		E06754411BECF1E90021F3B1 /* BaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
-		E06754431BECF2A40021F3B1 /* FriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendViewController.h; sourceTree = "<group>"; };
-		E06754441BECF2A40021F3B1 /* FriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendViewController.m; sourceTree = "<group>"; };
-		E06754461BECF2C00021F3B1 /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
-		E06754471BECF2C00021F3B1 /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
-		E06754491BECF2EA0021F3B1 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
-		E067544A1BECF2EA0021F3B1 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
-		E067544C1BECF3040021F3B1 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
-		E067544D1BECF3040021F3B1 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
 		E067544F1BECF3840021F3B1 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		E06754501BECF3C70021F3B1 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		E06754511BECFD240021F3B1 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		E06754521BECFD240021F3B1 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
-		E0B72AE21BEE161B00FC37C7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		E0B72AE31BEE161B00FC37C7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		E0B72AE51BEE444600FC37C7 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
-		E0B72AE61BEE444600FC37C7 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		E0B72AE81BEE528400FC37C7 /* UIButtonSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIButtonSubView.h; sourceTree = "<group>"; };
 		E0B72AE91BEE528400FC37C7 /* UIButtonSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIButtonSubView.m; sourceTree = "<group>"; };
 		E0C2E4051BEF5A2C00A78278 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -138,6 +141,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22682DEF1BF1A227005DAFD1 /* 糗事 */ = {
+			isa = PBXGroup;
+			children = (
+				22682DFF1BF1A3A8005DAFD1 /* MainViewController.h */,
+				22682E001BF1A3A8005DAFD1 /* MainViewController.m */,
+				22682E011BF1A3A8005DAFD1 /* QiuBaiListViewController.h */,
+				22682E021BF1A3A8005DAFD1 /* QiuBaiListViewController.m */,
+			);
+			path = "糗事";
+			sourceTree = "<group>";
+		};
+		22682DF01BF1A227005DAFD1 /* 糗友圈 */ = {
+			isa = PBXGroup;
+			children = (
+				22682DF61BF1A330005DAFD1 /* FriendViewController.h */,
+				22682DF71BF1A330005DAFD1 /* FriendViewController.m */,
+				22682DF81BF1A330005DAFD1 /* NearbyViewController.h */,
+				22682DF91BF1A330005DAFD1 /* NearbyViewController.m */,
+			);
+			path = "糗友圈";
+			sourceTree = "<group>";
+		};
+		22682DF11BF1A28F005DAFD1 /* 登录 */ = {
+			isa = PBXGroup;
+			children = (
+				22682DF31BF1A2E5005DAFD1 /* LoginViewController.h */,
+				22682DF41BF1A2E5005DAFD1 /* LoginViewController.m */,
+				22682E101BF1E132005DAFD1 /* LoginNaviViewController.h */,
+				22682E111BF1E132005DAFD1 /* LoginNaviViewController.m */,
+			);
+			path = "登录";
+			sourceTree = "<group>";
+		};
+		22682DF21BF1A28F005DAFD1 /* 发现 */ = {
+			isa = PBXGroup;
+			children = (
+				22682DFC1BF1A33D005DAFD1 /* DiscoverViewController.h */,
+				22682DFD1BF1A33D005DAFD1 /* DiscoverViewController.m */,
+			);
+			path = "发现";
+			sourceTree = "<group>";
+		};
+		22682E051BF1C133005DAFD1 /* 我 */ = {
+			isa = PBXGroup;
+			children = (
+				22682E061BF1C133005DAFD1 /* MeViewController.h */,
+				22682E071BF1C133005DAFD1 /* MeViewController.m */,
+				22682E081BF1C133005DAFD1 /* SettingViewController.h */,
+				22682E091BF1C133005DAFD1 /* SettingViewController.m */,
+			);
+			path = "我";
+			sourceTree = "<group>";
+		};
+		22682E0C1BF1C160005DAFD1 /* 小纸条 */ = {
+			isa = PBXGroup;
+			children = (
+				22682E0D1BF1C160005DAFD1 /* ChatViewController.h */,
+				22682E0E1BF1C160005DAFD1 /* ChatViewController.m */,
+			);
+			path = "小纸条";
+			sourceTree = "<group>";
+		};
 		226CEC3A1BECD0030061A5D8 = {
 			isa = PBXGroup;
 			children = (
@@ -312,24 +377,12 @@
 				E06754521BECFD240021F3B1 /* BaseNavigationController.m */,
 				E06754401BECF1E90021F3B1 /* BaseTabBarController.h */,
 				E06754411BECF1E90021F3B1 /* BaseTabBarController.m */,
-				E067543D1BECF1CC0021F3B1 /* MainViewController.h */,
-				E067543E1BECF1CC0021F3B1 /* MainViewController.m */,
-				E06754431BECF2A40021F3B1 /* FriendViewController.h */,
-				E06754441BECF2A40021F3B1 /* FriendViewController.m */,
-				E06754461BECF2C00021F3B1 /* DiscoverViewController.h */,
-				E06754471BECF2C00021F3B1 /* DiscoverViewController.m */,
-				E06754491BECF2EA0021F3B1 /* ChatViewController.h */,
-				E067544A1BECF2EA0021F3B1 /* ChatViewController.m */,
-				E067544C1BECF3040021F3B1 /* MeViewController.h */,
-				E067544D1BECF3040021F3B1 /* MeViewController.m */,
-				220B90921BEDA0590028E2D4 /* QiuBaiListViewController.h */,
-				220B90931BEDA0590028E2D4 /* QiuBaiListViewController.m */,
-				221D3CC11BF09966001E9F3D /* NearbyViewController.h */,
-				221D3CC21BF09966001E9F3D /* NearbyViewController.m */,
-				E0B72AE21BEE161B00FC37C7 /* LoginViewController.h */,
-				E0B72AE31BEE161B00FC37C7 /* LoginViewController.m */,
-				E0B72AE51BEE444600FC37C7 /* SettingViewController.h */,
-				E0B72AE61BEE444600FC37C7 /* SettingViewController.m */,
+				22682E0C1BF1C160005DAFD1 /* 小纸条 */,
+				22682E051BF1C133005DAFD1 /* 我 */,
+				22682DF11BF1A28F005DAFD1 /* 登录 */,
+				22682DF21BF1A28F005DAFD1 /* 发现 */,
+				22682DEF1BF1A227005DAFD1 /* 糗事 */,
+				22682DF01BF1A227005DAFD1 /* 糗友圈 */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -474,37 +527,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				220B90941BEDA0590028E2D4 /* QiuBaiListViewController.m in Sources */,
 				220371781BF02C4200B8E6FE /* QiuBaiNearByModel.m in Sources */,
 				2203717B1BF0310D00B8E6FE /* QiuBaiNearbyViewModel.m in Sources */,
 				E0B72AEA1BEE528400FC37C7 /* UIButtonSubView.m in Sources */,
 				220371A41BF0764F00B8E6FE /* NearbyCell.m in Sources */,
-				E067544B1BECF2EA0021F3B1 /* ChatViewController.m in Sources */,
-				221D3CC31BF09966001E9F3D /* NearbyViewController.m in Sources */,
 				E06754421BECF1E90021F3B1 /* BaseTabBarController.m in Sources */,
 				220B907E1BED850C0028E2D4 /* BaseModel.m in Sources */,
-				E067544E1BECF3040021F3B1 /* MeViewController.m in Sources */,
-				E06754481BECF2C00021F3B1 /* DiscoverViewController.m in Sources */,
 				220B90901BED89A60028E2D4 /* QiuBaiNetworkManager.m in Sources */,
 				226CEC721BECD3620061A5D8 /* WMFooldView.m in Sources */,
 				2203717E1BF039E600B8E6FE /* BaseViewModel.m in Sources */,
-				E0B72AE41BEE161B00FC37C7 /* LoginViewController.m in Sources */,
 				220B90811BED859C0028E2D4 /* QiuBaiModel.m in Sources */,
 				220B90841BED86D80028E2D4 /* QiuBaiViewModel.m in Sources */,
+				22682E031BF1A3A8005DAFD1 /* MainViewController.m in Sources */,
 				226CEC741BECD3620061A5D8 /* WMMenuView.m in Sources */,
-				E067543F1BECF1CC0021F3B1 /* MainViewController.m in Sources */,
+				22682E0F1BF1C160005DAFD1 /* ChatViewController.m in Sources */,
+				22682E0B1BF1C133005DAFD1 /* SettingViewController.m in Sources */,
 				226CEC761BECD3620061A5D8 /* WMPageController.m in Sources */,
-				E0B72AE71BEE444600FC37C7 /* SettingViewController.m in Sources */,
 				226CEC4B1BECD0030061A5D8 /* AppDelegate.m in Sources */,
+				22682DFE1BF1A33D005DAFD1 /* DiscoverViewController.m in Sources */,
+				22682E041BF1A3A8005DAFD1 /* QiuBaiListViewController.m in Sources */,
 				226CEC751BECD3620061A5D8 /* WMProgressView.m in Sources */,
 				226CEC481BECD0030061A5D8 /* main.m in Sources */,
-				E06754451BECF2A40021F3B1 /* FriendViewController.m in Sources */,
+				22682DFB1BF1A330005DAFD1 /* NearbyViewController.m in Sources */,
 				226CEC7A1BECD40D0061A5D8 /* AppDelegate+Category.m in Sources */,
 				220B90971BEDA0C70028E2D4 /* ListTextCell.m in Sources */,
 				220B909A1BEDA45C0028E2D4 /* UIView+Extension.m in Sources */,
+				22682E0A1BF1C133005DAFD1 /* MeViewController.m in Sources */,
+				22682E121BF1E132005DAFD1 /* LoginNaviViewController.m in Sources */,
 				226CEC731BECD3620061A5D8 /* WMMenuItem.m in Sources */,
 				220B908A1BED88510028E2D4 /* BaseNetworkManager.m in Sources */,
 				E06754531BECFD240021F3B1 /* BaseNavigationController.m in Sources */,
+				22682DF51BF1A2E5005DAFD1 /* LoginViewController.m in Sources */,
+				22682DFA1BF1A330005DAFD1 /* FriendViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,7 +674,7 @@
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "糗事百科/Resoure/PrefixHeader.pch";
 				INFOPLIST_FILE = "糗事百科/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hzq.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -638,7 +692,7 @@
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "糗事百科/Resoure/PrefixHeader.pch";
 				INFOPLIST_FILE = "糗事百科/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hzq.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -34,6 +34,7 @@
         [_ageAndGender setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _ageAndGender.titleLabel.font = [UIFont systemFontOfSize:11];
         _ageAndGender.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
+        _ageAndGender.layer.cornerRadius = 3;
     }
     return _ageAndGender;
 }
@@ -73,8 +74,9 @@
 - (UIButton *)optionA {
     if (_optionA == nil) {
         _optionA = [UIButton new];
-        _optionA.backgroundColor = [UIColor lightGrayColor];
-        [_optionA setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        _optionA.backgroundColor = kRGBColor(247, 247, 247);
+        [_optionA setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        [_optionA setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
     }
     return _optionA;
 }
@@ -82,8 +84,9 @@
 - (UIButton *)optionB {
     if (_optionB == nil) {
         _optionB = [UIButton new];
-        _optionB.backgroundColor = [UIColor lightGrayColor];
-        [_optionB setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        _optionB.backgroundColor = kRGBColor(247, 247, 247);
+        [_optionB setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        [_optionB setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
     }
     return _optionB;
 }
@@ -92,9 +95,21 @@
     if (_vsImageView == nil) {
         _vsImageView = [UIImageView new];
         _vsImageView.image = [UIImage imageNamed:@"qbf_vs_nor"];
+        _vsImageView.layer.cornerRadius = 15;
+        _vsImageView.layer.masksToBounds = YES;
     }
     return _vsImageView;
 }
+
+- (UIView *)optionView {
+    if (_optionView == nil) {
+        _optionView = [[UIView alloc] init];
+    }
+    return _optionView;
+}
+
+
+
 
 - (UILabel *)locationLb {
     if (_locationLb == nil) {
@@ -137,9 +152,11 @@
         
         [self.contentView addSubview:self.contentText];
         [self.contentView addSubview:self.allImageView];
-        [self.contentView addSubview:self.optionA];
-        [self.contentView addSubview:self.optionB];
-        [self.contentView addSubview:self.vsImageView];
+        
+        [self.contentView addSubview:self.optionView];
+        [self.optionView addSubview:self.optionA];
+        [self.optionView addSubview:self.optionB];
+        [self.optionView addSubview:self.vsImageView];
         
         [self.contentView addSubview:self.locationLb];
         [self.contentView addSubview:self.likeBtn];
@@ -191,28 +208,36 @@
             make.right.mas_equalTo(-10);
             make.height.mas_equalTo(0);
         }];
-        [self.optionA mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        
+        
+        [self.optionView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.leftMargin.mas_equalTo(_nikeName.mas_leftMargin);
             make.height.mas_equalTo(0);
             make.top.mas_equalTo(_allImageView.mas_bottom).mas_equalTo(5);
+            make.right.mas_equalTo(-10);
+        }];
+        [self.optionA mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.bottom.left.mas_equalTo(0);
         }];
         [self.vsImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(30, 0));
-            make.left.mas_equalTo(_optionA.mas_right).mas_equalTo(-10);
-            make.right.mas_equalTo(_optionB.mas_left).mas_equalTo(10);
-            make.top.mas_equalTo(_allImageView.mas_bottom).mas_equalTo(5);
+            make.bottom.top.mas_equalTo(0);
+            make.width.mas_equalTo(30);
+            make.left.mas_equalTo(_optionA.mas_right).mas_equalTo(-15);
+            make.right.mas_equalTo(_optionB.mas_left).mas_equalTo(15);
         }];
         [self.optionB mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(_allImageView.mas_bottom).mas_equalTo(5);
+            make.top.mas_equalTo(0);
             make.size.mas_equalTo(_optionA);
             make.right.mas_equalTo(-10);
         }];
         
         
+        
         [self.locationLb mas_makeConstraints:^(MASConstraintMaker *make) {
             make.leftMargin.mas_equalTo(_nikeName.mas_leftMargin);
             make.right.mas_equalTo(_likeBtn.mas_left).mas_equalTo(-10);
-            make.top.mas_equalTo(_optionA.mas_bottom).mas_equalTo(10);
+            make.top.mas_equalTo(_optionView.mas_bottom).mas_equalTo(10);
             make.height.mas_equalTo(30);
             make.bottom.mas_equalTo(-10);
         }];
@@ -224,18 +249,13 @@
         [self.commentBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.topMargin.mas_equalTo(_locationLb.mas_topMargin);
             make.size.mas_equalTo(_likeBtn);
-            make.right.mas_equalTo(-10);
+            make.right.mas_equalTo(0);
         }];
         
         
     }
     return self;
 }
-
-
-
-
-
 
 
 

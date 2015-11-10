@@ -28,4 +28,11 @@ cell.preservesSuperviewLayoutMargins = NO; \
 //Docment文件夹目录
 #define kDocumentPath NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject
 
+
+// 登录
+#define kLogin  LoginViewController *loginVC = [LoginViewController new];\
+LoginNaviViewController *navi = [[LoginNaviViewController alloc] initWithRootViewController:loginVC];\
+navi.hidesBottomBarWhenPushed = YES;
+
+
 #endif /* Constants_h */

@@ -10,6 +10,15 @@
 
 @interface QiuBaiNearbyViewModel : BaseViewModel
 
+/**
+ *  行数
+ */
+@property (nonatomic) NSInteger rowNumber;
+/**
+ *  存储当前数据
+ */
+@property (strong, nonatomic) NSMutableArray *dataArr;
+
 @property (nonatomic) NSInteger latitude;
 @property (nonatomic) NSInteger longitude;
 
@@ -33,7 +42,8 @@
 
 /** 糗事图片组 */
 - (NSArray *)contentImgForRow:(NSInteger)row;
-
+/** 图片的数量 */
+- (NSInteger)imgCountForRow:(NSInteger)row;
 /** 是否有投票 */
 - (BOOL)isVotesForRow:(NSInteger)row;
 
@@ -51,5 +61,7 @@
 
 /** 评论的人数 */
 - (NSString *)commentCountForRow:(NSInteger)row;
+
+
 
 @end

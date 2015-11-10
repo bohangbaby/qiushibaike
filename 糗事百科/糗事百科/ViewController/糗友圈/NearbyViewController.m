@@ -22,6 +22,7 @@
     [super viewDidLoad];
     
     [self.tableView registerClass:[NearbyCell class] forCellReuseIdentifier:@"NearbyCell"];
+    
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
        [self.nearbyVM refreshDataComletionHandle:^(NSError *error) {
@@ -61,7 +62,6 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.nearbyVM.rowNumber;
-//    return 12;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -69,7 +69,8 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NearbyCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NearbyCell" forIndexPath:indexPath];
+//    NearbyCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NearbyCell" forIndexPath:indexPath];
+    NearbyCell *cell = [[NearbyCell alloc] init];
     [cell.icon setImageWithURL:[self.nearbyVM iconURLForRow:indexPath.section] placeholderImage:[UIImage imageNamed:@"icon_anonymous"]];
     cell.nikeName.text = [self.nearbyVM nikeNameForRow:indexPath.section];
     if ([[self.nearbyVM genderForRow:indexPath.section] isEqualToString:@"M"]) {
@@ -83,8 +84,71 @@
     }
     cell.createTime.text = [self.nearbyVM createTimeForRow:indexPath.section];
     cell.contentText.text = [self.nearbyVM contentForRow:indexPath.section];
+    /**
+     *  图片
+     */
+    NSInteger count = [self.nearbyVM imgCountForRow:indexPath.section];
+    if (count) {
+        [cell.allImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.leftMargin.mas_equalTo(cell.nikeName.mas_leftMargin);
+            make.right.mas_equalTo(-10);
+            make.height.mas_equalTo(80);
+        }];
+        UIView *lastView = nil;
+        NSInteger num = count > 3 ? 3 : count;
+        for (int i = 0; i < num; i++) {
+            UIImageView *imageView = [UIImageView new];
+            [cell.allImageView addSubview:imageView];
+            [imageView setImageWithURL:[self.nearbyVM contentImgForRow:indexPath.section][i] placeholderImage:[UIImage imageNamed:@"im_img_placeholder"]];
+            [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.mas_equalTo(0);
+                make.size.mas_equalTo(CGSizeMake(80, 80));
+                if (lastView) {
+                    make.left.mas_equalTo(lastView.mas_right).mas_equalTo(10);
+                }else {
+                    make.left.mas_equalTo(0);
+                }
+            }];
+            lastView = imageView;
+        }
+    }
     
+  
     
+    if ([self.nearbyVM isVotesForRow:indexPath.section]) {
+        [cell.optionView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.leftMargin.mas_equalTo(cell.nikeName.mas_leftMargin);
+            make.height.mas_equalTo(30);
+            make.top.mas_equalTo(cell.allImageView.mas_bottom).mas_equalTo(5);
+            make.right.mas_equalTo(-10);
+        }];
+        
+        /**
+         *  更改投票按钮的内容
+         */
+        [cell.optionA setTitle:[self.nearbyVM voteContentForRow:indexPath.section][0] forState:UIControlStateNormal];
+        [cell.optionA bk_addEventHandler:^(id sender) {
+            cell.optionA.selected = YES;
+            [cell.optionA setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+            [cell.optionA setTitle:[self.nearbyVM voteResultForRow:indexPath.section][0] forState:UIControlStateSelected];
+            cell.optionA.enabled = NO;
+            cell.optionB.enabled = NO;
+            cell.vsImageView.backgroundColor = kRGBColor(133, 207, 41);
+            cell.optionA.backgroundColor = kRGBColor(133, 207, 41);
+            
+            
+        } forControlEvents:UIControlEventTouchUpInside];
+        [cell.optionB setTitle:[self.nearbyVM voteContentForRow:indexPath.section][1] forState:UIControlStateNormal];
+        [cell.optionB bk_addEventHandler:^(id sender) {
+            cell.vsImageView.backgroundColor = kRGBColor(133, 207, 41);
+            cell.optionB.backgroundColor = kRGBColor(133, 207, 41);
+            cell.optionB.selected = YES;
+            [cell.optionB setTitle:[self.nearbyVM voteResultForRow:indexPath.section][1] forState:UIControlStateSelected];
+            cell.optionA.enabled = NO;
+            cell.optionB.enabled = NO;
+        } forControlEvents:UIControlEventTouchUpInside];
+        
+    }
     
     cell.locationLb.text = [self.nearbyVM locationForRow:indexPath.section];
     [cell.likeBtn setTitle:[self.nearbyVM likeCountForRow:indexPath.section] forState:UIControlStateNormal];

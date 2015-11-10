@@ -14,7 +14,7 @@
 #import "MeViewController.h"
 #import "BaseNavigationController.h"
 #import "QiuBaiListViewController.h"
-#import "LoginViewController.h"
+#import "LoginNaviViewController.h"
 #import "WMPageController.h"
 #import "NearbyViewController.h"
 
@@ -29,12 +29,11 @@
     [super viewDidLoad];
     self.delegate = self;
     /** 糗事控制器 */
-    MainViewController *mainVC = [self mainVCStyle];
+    MainViewController *mainVC = [[MainViewController alloc] initWithStyle];
     mainVC.tabBarItem.tag = 200;
     [self setChildVC:mainVC andTitle:@"糗事" andNormalImage:@"icon_main" andSelectedImage:@"icon_main_active"];
     /** 糗友圈控制器 */
-    NearbyViewController *friendVC = [NearbyViewController new];
-//    FriendViewController *friendVC = [[FriendViewController alloc] init];
+    FriendViewController *friendVC = [[FriendViewController alloc] initWithStyle];
     [self setChildVC:friendVC andTitle:@"糗友圈" andNormalImage:@"main_tab_qbfriends" andSelectedImage:@"main_tab_qbfriends_active"];
     /** 发现控制器 */
     DiscoverViewController *discoverVC = [[DiscoverViewController alloc] init];
@@ -72,58 +71,12 @@
     
 }
 
-
-- (MainViewController *)mainVCStyle {
-    MainViewController *vc = [[MainViewController alloc] initWithViewControllerClasses:[self itemControllerClass] andTheirTitles:[self itemNames]];
-    vc.keys = [self vcKeys];
-    vc.values = [self vcValues];
-    vc.menuViewStyle = WMMenuViewStyleLine;
-    vc.menuItemWidth = kWindowW/6.0;
-    vc.progressColor = kRGBColor(255, 160, 21);
-    vc.titleColorNormal = kRGBColor(40, 40, 40);
-    vc.titleColorSelected = kRGBColor(255, 160, 21);
-    vc.titleSizeNormal = 14;
-    vc.titleSizeSelected = 14;
-    vc.progressHeight = 4;
-    
-    return vc;
-}
-
-- (NSArray *)itemNames {
-    return @[@"专享",@"视频",@"纯文",@"纯图",@"精华",@"最新"];
-}
-
-- (NSArray *)itemControllerClass {
-    NSMutableArray *arr = [NSMutableArray array];
-    for (int i = 0; i < 6; i++) {
-        [arr addObject:[QiuBaiListViewController class]];
-    }
-    return [arr copy];
-}
-
-- (NSArray *)vcKeys {
-    NSMutableArray *arr = [NSMutableArray array];
-    NSInteger count = [self itemNames].count;
-    for (int i = 0; i < count; i++) {
-        [arr addObject:@"type"];
-    }
-    return [arr copy];
-}
-
-- (NSArray *)vcValues {
-    NSMutableArray *arr = [NSMutableArray array];
-    NSInteger count = [self itemNames].count;
-    for (int i = 0; i <count ; i++) {
-        [arr addObject:@(i)];
-    }
-    return [arr copy];
-}
-
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
     if (viewController.tabBarItem.tag == 100) {
         LoginViewController *vc = [LoginViewController new];
+        LoginNaviViewController *nav = [[LoginNaviViewController alloc] initWithRootViewController:vc];
         vc.hidesBottomBarWhenPushed = YES;
-        [((UINavigationController *)tabBarController.selectedViewController) pushViewController:vc animated:YES];
+        [((UINavigationController *)tabBarController.selectedViewController) presentViewController:nav animated:YES completion:nil];
         return NO;
     }
     if (viewController.tabBarItem.tag == 200) {

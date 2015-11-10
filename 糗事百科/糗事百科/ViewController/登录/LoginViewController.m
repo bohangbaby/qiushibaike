@@ -27,7 +27,7 @@
     [cancel setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
     cancel.titleEdgeInsets = UIEdgeInsetsMake(0, -30, 0, 0);
     [cancel bk_addEventHandler:^(id sender) {
-        [self.navigationController popViewControllerAnimated:YES];
+        [self dismissViewControllerAnimated:YES completion:nil];
     } forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:cancel];
     

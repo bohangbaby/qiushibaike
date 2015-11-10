@@ -7,7 +7,7 @@
 //
 
 #import "MeViewController.h"
-#import "LoginViewController.h"
+#import "LoginNaviViewController.h"
 #import "SettingViewController.h"
 
 @implementation loginCell
@@ -123,13 +123,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    LoginViewController *loginVC = [LoginViewController new];
-    loginVC.hidesBottomBarWhenPushed = YES;
+    kLogin
     switch (indexPath.section) {
         case 0:
         case 1:
         case 2:
-            [self.navigationController pushViewController:loginVC animated:YES];
+            [self presentViewController:navi animated:YES completion:nil];
             break;
         case 3:
             if (indexPath.row == 0) {

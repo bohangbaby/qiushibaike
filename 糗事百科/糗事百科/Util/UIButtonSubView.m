@@ -26,7 +26,7 @@
     newFrame.size.width = self.frame.size.width;
     
     self.titleLabel.frame = newFrame;
-    self.titleLabel.textAlignment = UITextAlignmentCenter;
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
 }
 
 @end

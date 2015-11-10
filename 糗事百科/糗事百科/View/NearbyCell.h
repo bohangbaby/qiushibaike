@@ -36,6 +36,8 @@
 @property (strong, nonatomic) UIButton *optionB;
 /** 中间的VS图片 */
 @property (strong, nonatomic) UIImageView *vsImageView;
+/** 容器 */
+@property (strong, nonatomic) UIView *optionView;
 
 
 /** 位置信息 */

@@ -6,8 +6,10 @@
 //  Copyright © 2015年 hzq. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "WMPageController.h"
 
-@interface FriendViewController : UITableViewController
+@interface FriendViewController : WMPageController
+
+- (instancetype)initWithStyle;
 
 @end

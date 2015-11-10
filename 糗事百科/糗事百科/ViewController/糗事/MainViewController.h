@@ -11,5 +11,7 @@
 
 @interface MainViewController : WMPageController
 
+- (instancetype)initWithStyle;
+
 
 @end
