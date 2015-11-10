@@ -124,7 +124,7 @@
 
 
 - (void)getDataComletionHandle:(void(^)(NSError *error))completionHandle {
-    [QiuBaiNetworkManager getNearbyModelWithPage:self.page latitude:_latitude longitude:_longitude completionHandle:^(QiuBaiNearByModel *model, NSError *error) {
+    [QiuBaiNetworkManager getNearbyModelWithPage:self.page latitude:1 longitude:1 completionHandle:^(QiuBaiNearByModel *model, NSError *error) {
         if (self.page == 1) {
             [self.dataArr removeAllObjects];
         }
@@ -135,8 +135,8 @@
 
 - (void)refreshDataComletionHandle:(void (^)(NSError *))completionHandle {
     self.page = 1;
-    self.latitude = 1;
-    self.longitude = 1;
+//    self.latitude = 1;
+//    self.longitude = 1;
     [self getDataComletionHandle:completionHandle];
 }
 

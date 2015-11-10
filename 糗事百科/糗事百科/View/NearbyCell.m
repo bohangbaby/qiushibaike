@@ -22,6 +22,8 @@
 - (UILabel *)nikeName {
     if (_nikeName == nil) {
         _nikeName = [[UILabel alloc] init];
+        _nikeName.font = [UIFont systemFontOfSize:16];
+        _nikeName.textColor = kRGBColor(50, 50, 50);
     }
     return _nikeName;
 }
@@ -30,7 +32,8 @@
     if (_ageAndGender == nil) {
         _ageAndGender = [UIButton new];
         [_ageAndGender setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        _ageAndGender.titleLabel.font = [UIFont systemFontOfSize:13];
+        _ageAndGender.titleLabel.font = [UIFont systemFontOfSize:11];
+        _ageAndGender.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
     }
     return _ageAndGender;
 }
@@ -107,6 +110,7 @@
         _likeBtn = [UIButton new];
         [_likeBtn setImage:[UIImage imageNamed:@"qbf_like"] forState:UIControlStateNormal];
         [_likeBtn setImage:[UIImage imageNamed:@"qbf_like_copy"] forState:UIControlStateSelected];
+        [_likeBtn setTitleColor:kRGBColor(216, 216, 216) forState:UIControlStateNormal];
     }
     return _likeBtn;
 }
@@ -114,6 +118,8 @@
 - (UIButton *)commentBtn {
     if (_commentBtn == nil) {
         _commentBtn = [UIButton new];
+        [_commentBtn setImage:[UIImage imageNamed:@"button_comment"] forState:UIControlStateNormal];
+        [_commentBtn setTitleColor:kRGBColor(216, 216, 216) forState:UIControlStateNormal];
     }
     return _commentBtn;
 }
@@ -149,13 +155,14 @@
             make.top.mas_equalTo(15);
             make.right.mas_equalTo(_ageAndGender.mas_left).mas_equalTo(-2);
             make.height.mas_equalTo(30);
+            make.width.mas_lessThanOrEqualTo(150);
         }];
         [self.ageAndGender mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(40, 20));
-            make.top.mas_equalTo(20);
+            make.size.mas_equalTo(CGSizeMake(35, 15));
+            make.top.mas_equalTo(23);
         }];
         [self.createTime mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(100, 22));
+            make.size.mas_equalTo(CGSizeMake(60, 22));
             make.right.mas_equalTo(_more.mas_left).mas_equalTo(0);
             make.top.mas_equalTo(19);
         }];
@@ -166,9 +173,12 @@
         }];
         [self.more mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.mas_equalTo(-10);
-            make.size.mas_equalTo(CGSizeMake(40, 30));
-            make.top.mas_equalTo(15);
+            make.size.mas_equalTo(CGSizeMake(20, 20));
+            make.top.mas_equalTo(20);
         }];
+        
+        
+        
         
         [self.contentText mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(60);
@@ -187,7 +197,7 @@
             make.top.mas_equalTo(_allImageView.mas_bottom).mas_equalTo(5);
         }];
         [self.vsImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(30, 30));
+            make.size.mas_equalTo(CGSizeMake(30, 0));
             make.left.mas_equalTo(_optionA.mas_right).mas_equalTo(-10);
             make.right.mas_equalTo(_optionB.mas_left).mas_equalTo(10);
             make.top.mas_equalTo(_allImageView.mas_bottom).mas_equalTo(5);
@@ -208,7 +218,7 @@
         }];
         [self.likeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.topMargin.mas_equalTo(_locationLb.mas_topMargin);
-            make.size.mas_equalTo(CGSizeMake(100, 30));
+            make.size.mas_equalTo(CGSizeMake(80, 30));
             make.right.mas_equalTo(_commentBtn.mas_left).mas_equalTo(10);
         }];
         [self.commentBtn mas_makeConstraints:^(MASConstraintMaker *make) {

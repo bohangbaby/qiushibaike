@@ -70,13 +70,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NearbyCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NearbyCell" forIndexPath:indexPath];
-    [cell.icon setImageWithURL:[self.nearbyVM iconURLForRow:indexPath.section]];
+    [cell.icon setImageWithURL:[self.nearbyVM iconURLForRow:indexPath.section] placeholderImage:[UIImage imageNamed:@"icon_anonymous"]];
     cell.nikeName.text = [self.nearbyVM nikeNameForRow:indexPath.section];
     if ([[self.nearbyVM genderForRow:indexPath.section] isEqualToString:@"M"]) {
-        [cell.ageAndGender setTitle:[NSString stringWithFormat:@"♂ %@",[self.nearbyVM ageForRow:indexPath.section]] forState:UIControlStateNormal];
+        [cell.ageAndGender setBackgroundImage:[UIImage imageNamed:@"vote_group_candidate_male_bg"] forState:UIControlStateNormal];
+        [cell.ageAndGender setTitle:[self.nearbyVM ageForRow:indexPath.section] forState:UIControlStateNormal];
         cell.ageAndGender.backgroundColor = kRGBColor(171, 211, 255);
     }else {
-        [cell.ageAndGender setTitle:[NSString stringWithFormat:@"♀ %@",[self.nearbyVM ageForRow:indexPath.section]] forState:UIControlStateNormal];
+        [cell.ageAndGender setBackgroundImage:[UIImage imageNamed:@"vote_group_candidate_female_bg"] forState:UIControlStateNormal];
+        [cell.ageAndGender setTitle:[self.nearbyVM ageForRow:indexPath.section] forState:UIControlStateNormal];
         cell.ageAndGender.backgroundColor = kRGBColor(253, 167, 206);
     }
     cell.createTime.text = [self.nearbyVM createTimeForRow:indexPath.section];
@@ -99,6 +101,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewAutomaticDimension;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 2;
 }
 
 
