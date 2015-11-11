@@ -9,6 +9,7 @@
 #import "NearbyViewController.h"
 #import "NearbyCell.h"
 #import "QiuBaiNearbyViewModel.h"
+#import "PhotoViewController.h"
 
 @interface NearbyViewController ()
 
@@ -100,6 +101,11 @@
             CustomImageView *imageView = [CustomImageView new];
             [cell.allImageView addSubview:imageView];
             [imageView.imageView setImageWithURL:[self.nearbyVM contentImgForRow:indexPath.section][i] placeholderImage:[UIImage imageNamed:@"im_img_placeholder"]];
+            [imageView.imageButton bk_addEventHandler:^(id sender) {
+                PhotoViewController *photos = [[PhotoViewController alloc] init];
+                photos.imagesArr = [self.nearbyVM contentImgForRow:indexPath.section];
+                [self presentViewController:photos animated:YES completion:nil];
+            } forControlEvents:UIControlEventTouchUpInside];
             [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.top.mas_equalTo(0);
                 make.size.mas_equalTo(CGSizeMake(80, 80));

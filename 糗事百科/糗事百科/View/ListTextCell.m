@@ -272,7 +272,7 @@
 
 
 #pragma mark - 视频播放
-//为了保证同一时间只有一个播放器，使用单例模式
+// 为了保证同一时间只有一个播放器，使用单例模式
 + (AVPlayerViewController *)sharedInstance{
     static AVPlayerViewController *vc = nil;
     static dispatch_once_t onceToken;
@@ -282,7 +282,7 @@
     return vc;
 }
 
-//按钮点击
+// 按钮点击
 - (void)playButton {
     AVPlayer *player=[AVPlayer playerWithURL:self.videoURL];
     [player play];
@@ -292,7 +292,7 @@
         make.edges.mas_equalTo(0);
     }];
 }
-//如果cell被复用了，需要把cell上的播放器删掉
+// 如果cell被复用了，需要把cell上的播放器删掉
 - (void)prepareForReuse{
     [super prepareForReuse];
     //判断当前cell是否有播放，如果有则删除-->自己想办法

@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "QiuBaiListViewController.h"
 #import "LoginNaviViewController.h"
+#import "QiuBaiNearbyViewModel.h"
 
 @interface MainViewController ()
 
@@ -22,6 +23,9 @@
     
 }
 
+/**
+ *  设置导航栏的样式
+ */
 - (void)setNaviStyle {
 
     UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -49,7 +53,11 @@
     [self presentViewController:navi animated:YES completion:nil];
 }
 
-
+/**
+ *  必须用此方法初始化，来布局分页样式
+ *
+ *  @return 初始化对象
+ */
 - (instancetype)initWithStyle {
     if (self = [super init]) {
         self = [[MainViewController alloc] initWithViewControllerClasses:[self itemControllerClass] andTheirTitles:[self itemNames]];

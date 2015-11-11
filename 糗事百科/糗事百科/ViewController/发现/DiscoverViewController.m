@@ -33,37 +33,11 @@
     view.backgroundColor = [UIColor whiteColor];
     CGFloat widthButton = kWindowW/4.0;
     CGFloat yButton = (100 - kWindowW/4.0)/2.0;
-    UIButtonSubView *button1 = [UIButtonSubView new];
-    [button1 setTitle:@"附近" forState:UIControlStateNormal];
-    [button1 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    button1.titleLabel.font = [UIFont systemFontOfSize:15];
-    [button1 setImage:[UIImage imageNamed:@"discovery_nearby"] forState:UIControlStateNormal];
-    button1.frame = CGRectMake(0, yButton, widthButton, widthButton);
-    [view addSubview:button1];
-    
-    UIButtonSubView *button2 = [UIButtonSubView new];
-    [button2 setTitle:@"任意门" forState:UIControlStateNormal];
-    [button2 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    button2.titleLabel.font = [UIFont systemFontOfSize:15];
-    [button2 setImage:[UIImage imageNamed:@"discovery_freeGate"] forState:UIControlStateNormal];
-    button2.frame = CGRectMake(widthButton, yButton, widthButton, widthButton);
-    [view addSubview:button2];
-    
-    UIButtonSubView *button3 = [UIButtonSubView new];
-    [button3 setTitle:@"群" forState:UIControlStateNormal];
-    [button3 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    button3.titleLabel.font = [UIFont systemFontOfSize:15];
-    [button3 setImage:[UIImage imageNamed:@"discovery_group"] forState:UIControlStateNormal];
-    button3.frame = CGRectMake(widthButton*2, yButton, widthButton, widthButton);
-    [view addSubview:button3];
-    
-    UIButtonSubView *button4 = [UIButtonSubView new];
-    [button4 setTitle:@"糗百货" forState:UIControlStateNormal];
-    [button4 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    button4.titleLabel.font = [UIFont systemFontOfSize:15];
-    [button4 setImage:[UIImage imageNamed:@"discovery_qiubaihuo"] forState:UIControlStateNormal];
-    button4.frame = CGRectMake(widthButton*3, yButton, widthButton, widthButton);
-    [view addSubview:button4];
+
+    [view addSubview:[self buttonWithTitle:@"附近" image:[UIImage imageNamed:@"discovery_nearby"] x:0 y:yButton width:widthButton]];
+    [view addSubview:[self buttonWithTitle:@"任意门" image:[UIImage imageNamed:@"discovery_freeGate"] x:widthButton y:yButton width:widthButton]];
+    [view addSubview:[self buttonWithTitle:@"群" image:[UIImage imageNamed:@"discovery_group"] x:widthButton*2 y:yButton width:widthButton]];
+    [view addSubview:[self buttonWithTitle:@"糗百货" image:[UIImage imageNamed:@"discovery_qiubaihuo"] x:widthButton*3 y:yButton width:widthButton]];
     
     return view;
 }
@@ -71,20 +45,20 @@
 /**
  *  用来生成指定图文上下结构的按钮
  *
- *  @param title 文字
- *  @param image 图片
- *  @param x     x轴
- *  @param y     y轴
- *  @param width 宽度
+ *  @param title    文字
+ *  @param image    图片
+ *  @param x        x轴
+ *  @param y        y轴
+ *  @param width    宽度
  *
  *  @return 生成的按钮
  */
 - (UIButtonSubView *)buttonWithTitle:(NSString *)title image:(UIImage *)image x:(CGFloat)x y:(CGFloat)y width:(CGFloat)width {
     UIButtonSubView *button = [UIButtonSubView new];
-    [button setTitle:@"糗百货" forState:UIControlStateNormal];
+    [button setTitle:title forState:UIControlStateNormal];
     [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont systemFontOfSize:15];
-    [button setImage:[UIImage imageNamed:@"discovery_qiubaihuo"] forState:UIControlStateNormal];
+    [button setImage:image forState:UIControlStateNormal];
     button.frame = CGRectMake(x, y, width, width);
     return button;
 }

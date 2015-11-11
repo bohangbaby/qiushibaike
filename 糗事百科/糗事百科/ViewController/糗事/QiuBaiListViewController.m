@@ -39,6 +39,7 @@
      *  数据刷新
      */
     MJRefreshGifHeader *header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
+    
     [header setImages:@[[UIImage imageNamed:@"loadmore_arrow"]] forState:MJRefreshStatePulling];
     [header setImages:@[[UIImage imageNamed:@"loadmore_loading"]] duration:0.3 forState:MJRefreshStateRefreshing];
     // 隐藏时间
@@ -108,6 +109,7 @@
     [cell.icon setImageWithURL:[self.qiuBaiVM iconForRow:indexPath.section] placeholderImage:[UIImage imageNamed:@"icon_anonymous"]];
     cell.nikeName.text = [self.qiuBaiVM nikeNameForRow:indexPath.section];
     cell.videoURL = [self.qiuBaiVM videoURLForRow:indexPath.section];
+    
     if ([[self.qiuBaiVM typeForRow:indexPath.section] isEqualToString:@"hot"]) {
         [cell.type setImage:[UIImage imageNamed:@"subscribe_hot"] forState:UIControlStateNormal];
         [cell.type setTitle:@"热门" forState:UIControlStateNormal];
