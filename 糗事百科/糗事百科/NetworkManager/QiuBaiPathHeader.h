@@ -15,7 +15,7 @@
 
 /** 视频地址 */
 #define kVideoPath @"http://m2.qiushibaike.com/article/list/video?"
-/** 专享地址 */
+/** 专享地址 PS:现在用的时精华的地址 */
 #define kVIPPath @"http://m2.qiushibaike.com/article/list/day?"
 /** 纯文地址 */
 #define kTextPath @"http://m2.qiushibaike.com/article/list/text?"

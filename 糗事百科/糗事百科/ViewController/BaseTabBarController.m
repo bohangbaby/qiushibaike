@@ -28,6 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.delegate = self;
+    
     /** 糗事控制器 */
     MainViewController *mainVC = [[MainViewController alloc] initWithStyle];
     mainVC.tabBarItem.tag = 200;
@@ -71,8 +72,13 @@
     
 }
 
+
+#pragma mark - UITabBarControllerDelegate
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
     if (viewController.tabBarItem.tag == 100) {
+        /**
+         *  此处应该添加是否登录的判断...假如用户已经登录，就进入小纸条的界面，反之跳转到登录界面
+         */
         LoginViewController *vc = [LoginViewController new];
         LoginNaviViewController *nav = [[LoginNaviViewController alloc] initWithRootViewController:vc];
         vc.hidesBottomBarWhenPushed = YES;

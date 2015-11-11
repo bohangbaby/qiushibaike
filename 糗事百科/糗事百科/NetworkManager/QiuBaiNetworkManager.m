@@ -72,7 +72,7 @@
     [prama setValue:AdID forKey:@"AdID"];
     return prama;
 }
-// 专享
+// 专享  数据未下来，由于服务器会随机更改 readarticles ，数据一次之后获取不到了
 + (NSDictionary *)pramaVIPWithPage:(NSInteger)page {
     NSMutableDictionary *prama = [NSMutableDictionary dictionary];
     [prama setValue:@(30) forKey:@"count"];

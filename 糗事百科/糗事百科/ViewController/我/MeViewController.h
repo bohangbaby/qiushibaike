@@ -11,7 +11,3 @@
 @interface MeViewController : UITableViewController
 
 @end
-
-@interface loginCell : UITableViewCell
-
-@end

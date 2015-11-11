@@ -68,6 +68,27 @@
     return view;
 }
 
+/**
+ *  用来生成指定图文上下结构的按钮
+ *
+ *  @param title 文字
+ *  @param image 图片
+ *  @param x     x轴
+ *  @param y     y轴
+ *  @param width 宽度
+ *
+ *  @return 生成的按钮
+ */
+- (UIButtonSubView *)buttonWithTitle:(NSString *)title image:(UIImage *)image x:(CGFloat)x y:(CGFloat)y width:(CGFloat)width {
+    UIButtonSubView *button = [UIButtonSubView new];
+    [button setTitle:@"糗百货" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    button.titleLabel.font = [UIFont systemFontOfSize:15];
+    [button setImage:[UIImage imageNamed:@"discovery_qiubaihuo"] forState:UIControlStateNormal];
+    button.frame = CGRectMake(x, y, width, width);
+    return button;
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

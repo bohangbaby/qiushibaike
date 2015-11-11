@@ -10,20 +10,10 @@
 #import "LoginNaviViewController.h"
 #import "SettingViewController.h"
 
-@implementation loginCell
-
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    if (self = [super initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier]) {
-
-        
-    }
-    return self;
-}
-
-@end
 
 @interface MeViewController ()
 
+/** 夜间模式按钮 */
 @property (strong, nonatomic) UISwitch *swit;
 
 @end
@@ -38,6 +28,7 @@
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     self.tableView.tableFooterView = [UIView new];
 }
+#pragma mark - 懒加载
 
 - (UISwitch *)swit {
     if (_swit == nil) {
@@ -133,6 +124,7 @@
         case 3:
             if (indexPath.row == 0) {
             }else {
+                /** 进入设置页面 */
                 SettingViewController *setVC = [[SettingViewController alloc] init];
                 setVC.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:setVC animated:YES];

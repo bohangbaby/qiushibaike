@@ -21,6 +21,8 @@
     self.tableView.separatorColor = kRGBColor(240, 240, 240);
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    
+    /** 取消按钮 */
     UIButton *cancel = [UIButton new];
     cancel.frame = CGRectMake(0, 0, 60, 30);
     [cancel setTitle:@"取消" forState:UIControlStateNormal];
@@ -100,6 +102,38 @@ kRemoveCellSeparator
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 60;
+}
+
+
+/**
+ *  用来生成登录输入框的样式
+ *
+ *  @param placeholder 提示文字
+ *
+ *  @return 输入框
+ */
+- (UITextField *)loginTextFiledWith:(NSString *)placeholder {
+    UITextField *textF = [[UITextField alloc] init];
+    textF.placeholder = placeholder;
+    textF.x = 20;
+    textF.size = CGSizeMake(kWindowW-40, 40);
+    textF.y = 0;
+    return textF;
+}
+
+
+/**
+ *  用来生成登录按钮的样式
+ *
+ *  @param image 图片
+ *  @param title 文字内容
+ *  @param color 文字的颜色
+ *
+ *  @return 一个登录按钮
+ */
 - (UIButton *)otherLoginButtonWithNormalImage:(UIImage *)image andTitle:(NSString *)title andTitleColor:(UIColor *)color {
     UIButton *button = [UIButton new];
     [button setImage:image forState:UIControlStateNormal];
@@ -111,62 +145,5 @@ kRemoveCellSeparator
     return button;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 60;
-}
-
-- (UITextField *)loginTextFiledWith:(NSString *)placeholder {
-    UITextField *textF = [[UITextField alloc] init];
-    textF.placeholder = placeholder;
-    textF.x = 20;
-    textF.size = CGSizeMake(kWindowW-40, 40);
-    textF.y = 0;
-    return textF;
-}
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

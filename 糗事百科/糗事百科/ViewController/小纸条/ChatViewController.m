@@ -10,6 +10,8 @@
 
 @interface ChatViewController ()
 
+/** 用来存储聊天界面的内容 */
+@property (strong, nonatomic) NSMutableArray *chatDataArr;
 
 @end
 
@@ -17,8 +19,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    /** 头部文字 */
+    self.title = @"小纸条";
+    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"ChatCell"];
+    
+    
 }
 
+#pragma mark - 懒加载
+- (NSMutableArray *)chatDataArr {
+    if (_chatDataArr == nil) {
+        _chatDataArr = [NSMutableArray array];
+    }
+    return _chatDataArr;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -27,24 +43,23 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.chatDataArr.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChatCell" forIndexPath:indexPath];
+    cell.imageView.image = [UIImage imageNamed:@"discover_ftue.jpg"];
+    cell.imageView.layer.cornerRadius = 20;   // 假设图片的大小是 40*40
+    cell.imageView.layer.masksToBounds = YES;
+    cell.textLabel.text = @"这是一段聊天假数据";
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
