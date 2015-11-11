@@ -42,8 +42,8 @@
 - (UILabel *)createTime {
     if (_createTime == nil) {
         _createTime = [UILabel new];
-        _createTime.font = [UIFont systemFontOfSize:14];
-        _createTime.textColor = kRGBColor(60, 60, 60);
+        _createTime.font = [UIFont systemFontOfSize:13];
+        _createTime.textColor = kRGBColor(150, 150, 150);
     }
     return _createTime;
 }
@@ -51,7 +51,7 @@
 - (UIButton *)more {
     if (_more == nil) {
         _more = [UIButton new];
-        [_more setImage:[UIImage imageNamed:@"group_member_select_s"] forState:UIControlStateNormal];
+        [_more setImage:[UIImage imageNamed:@"qbf_arrow"] forState:UIControlStateNormal];
     }
     return _more;
 }
@@ -133,7 +133,7 @@
 - (UIButton *)commentBtn {
     if (_commentBtn == nil) {
         _commentBtn = [UIButton new];
-        [_commentBtn setImage:[UIImage imageNamed:@"button_comment"] forState:UIControlStateNormal];
+        [_commentBtn setImage:[UIImage imageNamed:@"qbf_chat"] forState:UIControlStateNormal];
         [_commentBtn setTitleColor:kRGBColor(216, 216, 216) forState:UIControlStateNormal];
     }
     return _commentBtn;

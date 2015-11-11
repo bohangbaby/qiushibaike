@@ -19,7 +19,7 @@
     NSString *path = @"http://pic.qiushibaike.com/system/avtnew/";
     NSString *createId = [NSString stringWithFormat:@"%ld",[self userModelForRow:row].ID];
     NSString *iconStr = @"";
-    if (![createId isEqualToString:@"0"]) {
+    if (createId.length >= 4) {
         NSString *leadId = [createId substringWithRange:NSMakeRange(0, 4)];
         iconStr = [NSString stringWithFormat:@"%@/%@/%@/medium/%@",path,leadId,createId,[self userModelForRow:row].icon];
     }
@@ -64,7 +64,18 @@
 
 /** 糗事文字内容 */
 - (NSString *)contentForRow:(NSInteger)row {
-    return [self nearbyModelForRow:row].content;
+    NSString *content = [self nearbyModelForRow:row].content;
+    // 假如是转发的内容，对内容进行解析
+    if ([content rangeOfString:@"qiushi_content"].location != NSNotFound) {
+        NSData *data = [content dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *error = nil;
+        NSDictionary *contentDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
+        NSString *circleContent = contentDic[@"circle_content"];
+        NSString *qiushiContent = contentDic[@"qiushi_content"];
+        NSLog(@"%@---%@",circleContent,qiushiContent);
+        return [NSString stringWithFormat:@"%@\n%@",circleContent,qiushiContent];
+    }else
+        return [self nearbyModelForRow:row].content;
 }
 
 /** 糗事图片组 */

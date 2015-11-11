@@ -91,27 +91,41 @@
     if (count) {
         [cell.allImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.leftMargin.mas_equalTo(cell.nikeName.mas_leftMargin);
-            make.right.mas_equalTo(-10);
+            make.width.mas_equalTo(250);
             make.height.mas_equalTo(80);
         }];
         UIView *lastView = nil;
         NSInteger num = count > 3 ? 3 : count;
         for (int i = 0; i < num; i++) {
-            UIImageView *imageView = [UIImageView new];
+            CustomImageView *imageView = [CustomImageView new];
             [cell.allImageView addSubview:imageView];
-            [imageView setImageWithURL:[self.nearbyVM contentImgForRow:indexPath.section][i] placeholderImage:[UIImage imageNamed:@"im_img_placeholder"]];
+            [imageView.imageView setImageWithURL:[self.nearbyVM contentImgForRow:indexPath.section][i] placeholderImage:[UIImage imageNamed:@"im_img_placeholder"]];
             [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.top.mas_equalTo(0);
                 make.size.mas_equalTo(CGSizeMake(80, 80));
                 if (lastView) {
-                    make.left.mas_equalTo(lastView.mas_right).mas_equalTo(10);
+                    make.left.mas_equalTo(lastView.mas_right).mas_equalTo(5);
                 }else {
                     make.left.mas_equalTo(0);
                 }
             }];
             lastView = imageView;
         }
+        if (count > 3) {
+            UILabel *imageCountLabel = [[UILabel alloc] init];
+            imageCountLabel.backgroundColor = kRGBColor(90, 90, 90);
+            imageCountLabel.font = [UIFont systemFontOfSize:13];
+            [cell.allImageView addSubview:imageCountLabel];
+            [imageCountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.size.mas_equalTo(CGSizeMake(18, 18));
+                make.bottom.right.mas_equalTo(0);
+            }];
+            imageCountLabel.textColor = [UIColor whiteColor];
+            imageCountLabel.text = [NSString stringWithFormat:@"%ld",count];
+            imageCountLabel.textAlignment = NSTextAlignmentCenter;
+        }
     }
+    
     
   
     
